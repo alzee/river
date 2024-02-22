@@ -116,6 +116,57 @@ class Pattern
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $xiangMuPiZhun = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $gaoCheng = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $yanHuaJianHua = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?float $quanYanLiang = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?float $youJiZhiHanLiang = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?float $EC = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?float $PH = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $guanGaiFangShi = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $feiLiaoShiYong = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $yuQiDanChan = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $chanNengTiSheng = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?float $touRu = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?float $chanChu = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $guanPaiXieTongCuoShi = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $xiaoZhangPeiFeiYaoDian = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $nongYiZaiPeiTeDian = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $genZongJianCeFangAn = null;
+
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $zuZhiShiShiXieTong = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -525,6 +576,210 @@ class Pattern
     public function setXiangMuPiZhun(?string $xiangMuPiZhun): static
     {
         $this->xiangMuPiZhun = $xiangMuPiZhun;
+
+        return $this;
+    }
+
+    public function getGaoCheng(): ?string
+    {
+        return $this->gaoCheng;
+    }
+
+    public function setGaoCheng(?string $gaoCheng): static
+    {
+        $this->gaoCheng = $gaoCheng;
+
+        return $this;
+    }
+
+    public function getYanHuaJianHua(): ?string
+    {
+        return $this->yanHuaJianHua;
+    }
+
+    public function setYanHuaJianHua(?string $yanHuaJianHua): static
+    {
+        $this->yanHuaJianHua = $yanHuaJianHua;
+
+        return $this;
+    }
+
+    public function getQuanYanLiang(): ?float
+    {
+        return $this->quanYanLiang;
+    }
+
+    public function setQuanYanLiang(float $quanYanLiang): static
+    {
+        $this->quanYanLiang = $quanYanLiang;
+
+        return $this;
+    }
+
+    public function getYouJiZhiHanLiang(): ?float
+    {
+        return $this->youJiZhiHanLiang;
+    }
+
+    public function setYouJiZhiHanLiang(?float $youJiZhiHanLiang): static
+    {
+        $this->youJiZhiHanLiang = $youJiZhiHanLiang;
+
+        return $this;
+    }
+
+    public function getEC(): ?float
+    {
+        return $this->EC;
+    }
+
+    public function setEC(?float $EC): static
+    {
+        $this->EC = $EC;
+
+        return $this;
+    }
+
+    public function getPH(): ?float
+    {
+        return $this->PH;
+    }
+
+    public function setPH(?float $PH): static
+    {
+        $this->PH = $PH;
+
+        return $this;
+    }
+
+    public function getGuanGaiFangShi(): ?string
+    {
+        return $this->guanGaiFangShi;
+    }
+
+    public function setGuanGaiFangShi(?string $guanGaiFangShi): static
+    {
+        $this->guanGaiFangShi = $guanGaiFangShi;
+
+        return $this;
+    }
+
+    public function getFeiLiaoShiYong(): ?string
+    {
+        return $this->feiLiaoShiYong;
+    }
+
+    public function setFeiLiaoShiYong(?string $feiLiaoShiYong): static
+    {
+        $this->feiLiaoShiYong = $feiLiaoShiYong;
+
+        return $this;
+    }
+
+    public function getYuQiDanChan(): ?int
+    {
+        return $this->yuQiDanChan;
+    }
+
+    public function setYuQiDanChan(?int $yuQiDanChan): static
+    {
+        $this->yuQiDanChan = $yuQiDanChan;
+
+        return $this;
+    }
+
+    public function getChanNengTiSheng(): ?string
+    {
+        return $this->chanNengTiSheng;
+    }
+
+    public function setChanNengTiSheng(?string $chanNengTiSheng): static
+    {
+        $this->chanNengTiSheng = $chanNengTiSheng;
+
+        return $this;
+    }
+
+    public function getTouRu(): ?float
+    {
+        return $this->touRu;
+    }
+
+    public function setTouRu(?float $touRu): static
+    {
+        $this->touRu = $touRu;
+
+        return $this;
+    }
+
+    public function getChanChu(): ?float
+    {
+        return $this->chanChu;
+    }
+
+    public function setChanChu(?float $chanChu): static
+    {
+        $this->chanChu = $chanChu;
+
+        return $this;
+    }
+
+    public function getGuanPaiXieTongCuoShi(): ?string
+    {
+        return $this->guanPaiXieTongCuoShi;
+    }
+
+    public function setGuanPaiXieTongCuoShi(?string $guanPaiXieTongCuoShi): static
+    {
+        $this->guanPaiXieTongCuoShi = $guanPaiXieTongCuoShi;
+
+        return $this;
+    }
+
+    public function getXiaoZhangPeiFeiYaoDian(): ?string
+    {
+        return $this->xiaoZhangPeiFeiYaoDian;
+    }
+
+    public function setXiaoZhangPeiFeiYaoDian(?string $xiaoZhangPeiFeiYaoDian): static
+    {
+        $this->xiaoZhangPeiFeiYaoDian = $xiaoZhangPeiFeiYaoDian;
+
+        return $this;
+    }
+
+    public function getNongYiZaiPeiTeDian(): ?string
+    {
+        return $this->nongYiZaiPeiTeDian;
+    }
+
+    public function setNongYiZaiPeiTeDian(?string $nongYiZaiPeiTeDian): static
+    {
+        $this->nongYiZaiPeiTeDian = $nongYiZaiPeiTeDian;
+
+        return $this;
+    }
+
+    public function getGenZongJianCeFangAn(): ?string
+    {
+        return $this->genZongJianCeFangAn;
+    }
+
+    public function setGenZongJianCeFangAn(?string $genZongJianCeFangAn): static
+    {
+        $this->genZongJianCeFangAn = $genZongJianCeFangAn;
+
+        return $this;
+    }
+
+    public function getZuZhiShiShiXieTong(): ?string
+    {
+        return $this->zuZhiShiShiXieTong;
+    }
+
+    public function setZuZhiShiShiXieTong(string $zuZhiShiShiXieTong): static
+    {
+        $this->zuZhiShiShiXieTong = $zuZhiShiShiXieTong;
 
         return $this;
     }

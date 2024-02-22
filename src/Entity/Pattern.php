@@ -189,11 +189,15 @@ class Pattern
 
     #[ORM\OneToMany(targetEntity: Soil::class, mappedBy: 'pattern')]
     private Collection $soils;
+
+    #[ORM\OneToMany(targetEntity: Irrigation::class, mappedBy: 'pattern', orphanRemoval: true)]
+    private Collection $irrigations;
     
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();
         $this->soils = new ArrayCollection();
+        $this->irrigations = new ArrayCollection();
     }
     
     public function __toString()
@@ -906,6 +910,36 @@ class Pattern
             // set the owning side to null (unless already changed)
             if ($soil->getPattern() === $this) {
                 $soil->setPattern(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Irrigation>
+     */
+    public function getIrrigations(): Collection
+    {
+        return $this->irrigations;
+    }
+
+    public function addIrrigation(Irrigation $irrigation): static
+    {
+        if (!$this->irrigations->contains($irrigation)) {
+            $this->irrigations->add($irrigation);
+            $irrigation->setPattern($this);
+        }
+
+        return $this;
+    }
+
+    public function removeIrrigation(Irrigation $irrigation): static
+    {
+        if ($this->irrigations->removeElement($irrigation)) {
+            // set the owning side to null (unless already changed)
+            if ($irrigation->getPattern() === $this) {
+                $irrigation->setPattern(null);
             }
         }
 

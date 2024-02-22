@@ -25,7 +25,7 @@ class Fertilizer
 
     #[ORM\ManyToOne(inversedBy: 'fertilizers')]
     #[ORM\JoinColumn(nullable: false)]
-    #[Groups(['read', 'write'])]
+    #[Groups(['read'])]
     private ?Pattern $pattern = null;
 
     #[ORM\Column(length: 255)]

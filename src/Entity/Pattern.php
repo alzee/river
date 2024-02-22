@@ -195,6 +195,9 @@ class Pattern
 
     #[ORM\OneToMany(targetEntity: Fertilizer::class, mappedBy: 'pattern', orphanRemoval: true)]
     private Collection $fertilizers;
+
+    #[ORM\OneToMany(targetEntity: Seed::class, mappedBy: 'pattern', orphanRemoval: true)]
+    private Collection $seeds;
     
     public function __construct()
     {
@@ -202,6 +205,7 @@ class Pattern
         $this->soils = new ArrayCollection();
         $this->irrigations = new ArrayCollection();
         $this->fertilizers = new ArrayCollection();
+        $this->seeds = new ArrayCollection();
     }
     
     public function __toString()
@@ -974,6 +978,36 @@ class Pattern
             // set the owning side to null (unless already changed)
             if ($fertilizer->getPattern() === $this) {
                 $fertilizer->setPattern(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Seed>
+     */
+    public function getSeeds(): Collection
+    {
+        return $this->seeds;
+    }
+
+    public function addSeed(Seed $seed): static
+    {
+        if (!$this->seeds->contains($seed)) {
+            $this->seeds->add($seed);
+            $seed->setPattern($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSeed(Seed $seed): static
+    {
+        if ($this->seeds->removeElement($seed)) {
+            // set the owning side to null (unless already changed)
+            if ($seed->getPattern() === $this) {
+                $seed->setPattern(null);
             }
         }
 

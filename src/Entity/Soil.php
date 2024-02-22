@@ -73,6 +73,9 @@ class Soil
     #[ORM\Column(nullable: true)]
     private ?float $tianJianChiShuiLiang = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $type = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -314,6 +317,18 @@ class Soil
     public function setTianJianChiShuiLiang(?float $tianJianChiShuiLiang): static
     {
         $this->tianJianChiShuiLiang = $tianJianChiShuiLiang;
+
+        return $this;
+    }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(string $type): static
+    {
+        $this->type = $type;
 
         return $this;
     }

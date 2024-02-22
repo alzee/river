@@ -181,6 +181,9 @@ class Pattern
 
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $zhongZiPinZhong = null;
     
     public function __construct()
     {
@@ -859,5 +862,17 @@ class Pattern
     public function getImageFile(): ?File
     {
         return $this->imageFile;
+    }
+
+    public function getZhongZiPinZhong(): ?string
+    {
+        return $this->zhongZiPinZhong;
+    }
+
+    public function setZhongZiPinZhong(?string $zhongZiPinZhong): static
+    {
+        $this->zhongZiPinZhong = $zhongZiPinZhong;
+
+        return $this;
     }
 }

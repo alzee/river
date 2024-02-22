@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PatternRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -184,10 +186,14 @@ class Pattern
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $zhongZiPinZhong = null;
+
+    #[ORM\OneToMany(targetEntity: Soil::class, mappedBy: 'pattern')]
+    private Collection $soils;
     
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();
+        $this->soils = new ArrayCollection();
     }
     
     public function __toString()
@@ -872,6 +878,36 @@ class Pattern
     public function setZhongZiPinZhong(?string $zhongZiPinZhong): static
     {
         $this->zhongZiPinZhong = $zhongZiPinZhong;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Soil>
+     */
+    public function getSoils(): Collection
+    {
+        return $this->soils;
+    }
+
+    public function addSoil(Soil $soil): static
+    {
+        if (!$this->soils->contains($soil)) {
+            $this->soils->add($soil);
+            $soil->setPattern($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSoil(Soil $soil): static
+    {
+        if ($this->soils->removeElement($soil)) {
+            // set the owning side to null (unless already changed)
+            if ($soil->getPattern() === $this) {
+                $soil->setPattern(null);
+            }
+        }
 
         return $this;
     }

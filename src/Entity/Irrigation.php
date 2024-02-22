@@ -20,16 +20,20 @@ class Irrigation
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['read', 'write'])]
     private ?string $date = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['read', 'write'])]
     private ?string $guanShuiLiang = null;
 
     #[ORM\ManyToOne(inversedBy: 'irrigations')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups(['read'])]
     private ?Pattern $pattern = null;
 
     public function getId(): ?int

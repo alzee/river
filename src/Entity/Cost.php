@@ -25,7 +25,7 @@ class Cost
 
     #[ORM\ManyToOne(inversedBy: 'costs')]
     #[ORM\JoinColumn(nullable: false)]
-    #[Groups(['read', 'write'])]
+    #[Groups(['read'])]
     private ?Pattern $pattern = null;
 
     #[ORM\Column(length: 255, nullable: true)]

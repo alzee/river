@@ -181,6 +181,16 @@ class Pattern
 
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
+    
+    public function __construct()
+    {
+        $this->createdAt = new \DateTimeImmutable();
+    }
+    
+    public function __toString()
+    {
+        return $this->name;
+    }
 
     public function getId(): ?int
     {

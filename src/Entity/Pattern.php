@@ -279,6 +279,9 @@ class Pattern
     #[ORM\OneToMany(targetEntity: Cost::class, mappedBy: 'pattern', orphanRemoval: true)]
     #[Groups(['read', 'write'])]
     private Collection $costs;
+
+    #[ORM\Column(length: 255)]
+    private ?string $SN = null;
     
     public function __construct()
     {
@@ -1153,6 +1156,18 @@ class Pattern
                 $cost->setPattern(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getSN(): ?string
+    {
+        return $this->SN;
+    }
+
+    public function setSN(string $SN): static
+    {
+        $this->SN = $SN;
 
         return $this;
     }

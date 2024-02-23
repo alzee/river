@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Service\Wx;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
+use App\Entity\Pattern;
 
 #[Route('/api')]
 class ApiController extends AbstractController
@@ -28,5 +29,19 @@ class ApiController extends AbstractController
         $code = $data->code;
         $resp = $this->wx->getPhoneNumber($code);
         return $this->json($resp);
+    }
+    
+    #[Route(path: '/getPatternProps', name: 'api_pattern_props', methods: ['GET'])]
+    public function getPatternProps()
+    {
+        $reflect = new \ReflectionClass('App\Entity\Pattern');
+        $props = $reflect->getProperties();
+        // dump($props);
+        foreach ($props as $p) {
+            $attrs = $p->getAttributes();
+            // dump($attrs);
+        }
+        // return $this->json($resp);
+        return new Response('<body></body>');
     }
 }

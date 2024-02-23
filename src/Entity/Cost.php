@@ -12,7 +12,7 @@ use ApiPlatform\Doctrine\Orm\Filter\OrderFilter;
 
 #[ORM\Entity(repositoryClass: CostRepository::class)]
 #[ApiResource(
-    normalizationContext: ['groups' => ['read']],
+    normalizationContext: ['groups' => ['cost_read']],
     denormalizationContext: ['groups' => ['write']],
 )]
 class Cost
@@ -20,44 +20,44 @@ class Cost
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['read'])]
+    #[Groups(['cost_read'])]
     private ?int $id = null;
 
     #[ORM\ManyToOne(inversedBy: 'costs')]
     #[ORM\JoinColumn(nullable: false)]
-    #[Groups(['read'])]
+    #[Groups(['cost_read'])]
     private ?Pattern $pattern = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['read', 'write'])]
+    #[Groups(['cost_read', 'write'])]
     private ?string $neiRong = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['read', 'write'])]
+    #[Groups(['cost_read', 'write'])]
     private ?string $zongLiang = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['read', 'write'])]
+    #[Groups(['cost_read', 'write'])]
     private ?float $zongJia = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['read', 'write'])]
+    #[Groups(['cost_read', 'write'])]
     private ?float $danJia = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['read', 'write'])]
+    #[Groups(['cost_read', 'write'])]
     private ?string $danWei = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['read', 'write'])]
+    #[Groups(['cost_read', 'write'])]
     private ?string $fangFa = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['read', 'write'])]
+    #[Groups(['cost_read', 'write'])]
     private ?float $shiYongLiang = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['read', 'write'])]
+    #[Groups(['cost_read', 'write'])]
     private ?float $chanLiang = null;
 
     public function getId(): ?int

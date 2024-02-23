@@ -55,10 +55,11 @@ class ApiController extends AbstractController
         $file->move('images/', $newName);
         
         $type = $request->request->get('type');
-        if ($type === 1) {
-            $user = $this->doctrine->getRepository(User::class)->find($object->getEntityId());
-            $user->setAvatar('images/' . $newName);
-            $this->em->flush();
+        if ($type == 1) {
+            $uid = $request->request->get('uid');
+            $user = $this->doctrine->getRepository(User::class)->find($uid);
+            $user->setAvatar($newName);
+            $this->doctrine->getManager()->flush();
         }
         
         return $this->json(['url' => '/images/' . $newName]);

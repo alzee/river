@@ -281,6 +281,7 @@ class Pattern
     private Collection $costs;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['read', 'write'])]
     private ?string $SN = null;
     
     public function __construct()

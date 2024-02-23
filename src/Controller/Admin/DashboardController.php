@@ -57,6 +57,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('The Label', 'fas fa-list', Irrigation::class);
         yield MenuItem::linkToCrud('The Label', 'fas fa-list', Fertilizer::class);
         yield MenuItem::linkToCrud('The Label', 'fas fa-list', Tracking::class);
+        yield MenuItem::linkToCrud('The Label', 'fas fa-list', Cost::class);
         yield MenuItem::linkToCrud('The Label', 'fas fa-list', User::class);
     }
 

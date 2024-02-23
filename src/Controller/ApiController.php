@@ -9,6 +9,7 @@ use App\Service\Wx;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Pattern;
+use App\Entity\User;
 
 #[Route('/api')]
 class ApiController extends AbstractController
@@ -52,6 +53,14 @@ class ApiController extends AbstractController
         $newName = uniqid() . '-' .  $file->getClientOriginalName();
         // copy($file->getPathname(), 'images/' . $newName);
         $file->move('images/', $newName);
+        
+        $type = $request->request->get('type');
+        if ($type === 1) {
+            $user = $this->doctrine->getRepository(User::class)->find($object->getEntityId());
+            $user->setAvatar('images/' . $newName);
+            $this->em->flush();
+        }
+        
         return $this->json(['url' => '/images/' . $newName]);
     }
 }

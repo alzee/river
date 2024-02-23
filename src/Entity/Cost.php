@@ -12,52 +12,53 @@ use ApiPlatform\Doctrine\Orm\Filter\OrderFilter;
 
 #[ORM\Entity(repositoryClass: CostRepository::class)]
 #[ApiResource(
-    normalizationContext: ['groups' => ['cost_read']],
-    denormalizationContext: ['groups' => ['write']],
+    normalizationContext: ['groups' => ['other_read']],
+    denormalizationContext: ['groups' => ['other_write']],
 )]
+#[ApiFilter(SearchFilter::class, properties: ['pattern' => 'exact'])]
 class Cost
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['cost_read'])]
+    #[Groups(['other_read'])]
     private ?int $id = null;
 
     #[ORM\ManyToOne(inversedBy: 'costs')]
     #[ORM\JoinColumn(nullable: false)]
-    #[Groups(['cost_read'])]
+    #[Groups(['other_read', 'other_write'])]
     private ?Pattern $pattern = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['cost_read', 'write'])]
+    #[Groups(['other_read', 'other_write'])]
     private ?string $neiRong = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['cost_read', 'write'])]
+    #[Groups(['other_read', 'other_write'])]
     private ?string $zongLiang = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['cost_read', 'write'])]
+    #[Groups(['other_read', 'other_write'])]
     private ?float $zongJia = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['cost_read', 'write'])]
+    #[Groups(['other_read', 'other_write'])]
     private ?float $danJia = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['cost_read', 'write'])]
+    #[Groups(['other_read', 'other_write'])]
     private ?string $danWei = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['cost_read', 'write'])]
+    #[Groups(['other_read', 'other_write'])]
     private ?string $fangFa = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['cost_read', 'write'])]
+    #[Groups(['other_read', 'other_write'])]
     private ?float $shiYongLiang = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['cost_read', 'write'])]
+    #[Groups(['other_read', 'other_write'])]
     private ?float $chanLiang = null;
 
     public function getId(): ?int

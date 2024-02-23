@@ -12,40 +12,41 @@ use ApiPlatform\Doctrine\Orm\Filter\OrderFilter;
 
 #[ORM\Entity(repositoryClass: TrackingRepository::class)]
 #[ApiResource(
-    normalizationContext: ['groups' => ['read']],
-    denormalizationContext: ['groups' => ['write']],
+    normalizationContext: ['groups' => ['other_read']],
+    denormalizationContext: ['groups' => ['other_write']],
 )]
+#[ApiFilter(SearchFilter::class, properties: ['pattern' => 'exact'])]
 class Tracking
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['read'])]
+    #[Groups(['other_read'])]
     private ?int $id = null;
 
     #[ORM\ManyToOne(inversedBy: 'trackings')]
     #[ORM\JoinColumn(nullable: false)]
-    #[Groups(['read'])]
+    #[Groups(['other_read'])]
     private ?Pattern $pattern = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['read', 'write'])]
+    #[Groups(['other_read', 'other_write'])]
     private ?string $fangFaSheBei = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['read', 'write'])]
+    #[Groups(['other_read', 'other_write'])]
     private ?string $jianCePinCi = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['read', 'write'])]
+    #[Groups(['other_read', 'other_write'])]
     private ?string $xianDiYuanCheng = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['read', 'write'])]
+    #[Groups(['other_read', 'other_write'])]
     private ?string $jianCeZhuanTi = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['read', 'write'])]
+    #[Groups(['other_read', 'other_write'])]
     private ?string $type = null;
 
     public function getId(): ?int

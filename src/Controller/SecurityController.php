@@ -56,13 +56,11 @@ class SecurityController extends AbstractDashboardController
             $uid = $user->getId();
             $role = $user->getOrg()->getType();
             $username = $user->getUsername();
-            $org = $user->getOrg();
             $data = [
                 "uid" => $uid,
                 "role" => $role,
                 "roles" => $user->getRoles(),
                 "username" => $username,
-                "org" => $org
             ];
             $resp = [
                 "code" => 0,
@@ -100,7 +98,6 @@ class SecurityController extends AbstractDashboardController
             "roles" => $user->getRoles(),
             "name" => $user->getName(),
             "phone" => $user->getPhone(),
-            "firm" => $user->getFirm(),
         ];
         return $this->json($resp);
     }

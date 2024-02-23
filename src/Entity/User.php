@@ -50,9 +50,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $openid = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['read', 'write'])]
     private ?string $name = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['read', 'write'])]
     private ?string $phone = null;
 
     public function getId(): ?int

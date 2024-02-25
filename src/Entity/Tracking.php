@@ -45,7 +45,7 @@ class Tracking
     #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $jianCeZhuanTi = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $type = null;
 

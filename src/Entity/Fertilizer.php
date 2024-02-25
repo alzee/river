@@ -29,7 +29,7 @@ class Fertilizer
     #[Groups(['other_read'])]
     private ?Pattern $pattern = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $date = null;
 

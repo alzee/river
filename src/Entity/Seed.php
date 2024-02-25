@@ -46,6 +46,7 @@ class Seed
     private ?string $cuoShi3 = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $type = null;
 
     public function getId(): ?int

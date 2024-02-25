@@ -21,15 +21,15 @@ class Irrigation
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['other_read'])]
+    #[Groups(['other_read', 'read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $date = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $guanShuiLiang = null;
 
     #[ORM\ManyToOne(inversedBy: 'irrigations')]

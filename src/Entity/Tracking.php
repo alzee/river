@@ -21,7 +21,7 @@ class Tracking
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['other_read'])]
+    #[Groups(['other_read', 'read'])]
     private ?int $id = null;
 
     #[ORM\ManyToOne(inversedBy: 'trackings')]
@@ -30,23 +30,23 @@ class Tracking
     private ?Pattern $pattern = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $fangFaSheBei = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $jianCePinCi = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $xianDiYuanCheng = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $jianCeZhuanTi = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $type = null;
 
     public function getId(): ?int

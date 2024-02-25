@@ -21,7 +21,7 @@ class Soil
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['other_read'])]
+    #[Groups(['other_read', 'read'])]
     private ?int $id = null;
 
     #[ORM\ManyToOne(inversedBy: 'soils')]
@@ -29,83 +29,83 @@ class Soil
     private ?Pattern $pattern = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $nianFenSha = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $tuRangZhiDi = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?float $ganRongLiang = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?float $kongXiDu = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?float $quanDan = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?float $quanLin = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?float $quanJia = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?float $youJiZhi = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?float $xiaoTaiDan = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?float $anTaiDan = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?float $youXiaoLin = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?float $youXiaoJia = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?float $jianJieDan = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?float $quanYanLiang = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?float $EC = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?float $PH = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?float $baoHeHanShuiLv = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?float $baoHeDaoShuiLv = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?float $tianJianChiShuiLiang = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $type = null;
 
     public function getId(): ?int

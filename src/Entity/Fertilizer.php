@@ -21,7 +21,7 @@ class Fertilizer
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['other_read'])]
+    #[Groups(['other_read', 'read'])]
     private ?int $id = null;
 
     #[ORM\ManyToOne(inversedBy: 'fertilizers')]
@@ -30,39 +30,39 @@ class Fertilizer
     private ?Pattern $pattern = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $date = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $cuoShi1 = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $shiYongLiang1 = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $cuoShi2 = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $shiYongLiang2 = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $cuoShi3 = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $shiYongLiang3 = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $cuoShi4 = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $shiYongLiang4 = null;
 
     public function getId(): ?int

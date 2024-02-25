@@ -21,7 +21,7 @@ class Cost
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['other_read'])]
+    #[Groups(['other_read', 'read'])]
     private ?int $id = null;
 
     #[ORM\ManyToOne(inversedBy: 'costs')]
@@ -30,35 +30,35 @@ class Cost
     private ?Pattern $pattern = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $neiRong = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $zongLiang = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?float $zongJia = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?float $danJia = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $danWei = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $fangFa = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?float $shiYongLiang = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['other_read', 'other_write'])]
+    #[Groups(['other_read', 'read', 'other_write'])]
     private ?float $chanLiang = null;
 
     public function getId(): ?int

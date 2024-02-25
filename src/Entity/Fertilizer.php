@@ -65,6 +65,9 @@ class Fertilizer
     #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $shiYongLiang4 = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $type = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -186,6 +189,18 @@ class Fertilizer
     public function setShiYongLiang4(?string $shiYongLiang4): static
     {
         $this->shiYongLiang4 = $shiYongLiang4;
+
+        return $this;
+    }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(?string $type): static
+    {
+        $this->type = $type;
 
         return $this;
     }

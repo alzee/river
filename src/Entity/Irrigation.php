@@ -37,6 +37,9 @@ class Irrigation
     #[Groups(['other_read'])]
     private ?Pattern $pattern = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $type = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +77,18 @@ class Irrigation
     public function setPattern(?Pattern $pattern): static
     {
         $this->pattern = $pattern;
+
+        return $this;
+    }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(?string $type): static
+    {
+        $this->type = $type;
 
         return $this;
     }

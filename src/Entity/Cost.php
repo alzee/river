@@ -61,6 +61,9 @@ class Cost
     #[Groups(['other_read', 'read', 'other_write'])]
     private ?float $chanLiang = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $type = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -170,6 +173,18 @@ class Cost
     public function setChanLiang(float $chanLiang): static
     {
         $this->chanLiang = $chanLiang;
+
+        return $this;
+    }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(?string $type): static
+    {
+        $this->type = $type;
 
         return $this;
     }

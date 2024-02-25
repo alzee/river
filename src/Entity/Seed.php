@@ -45,6 +45,9 @@ class Seed
     #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $cuoShi3 = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $type = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -106,6 +109,18 @@ class Seed
     public function setCuoShi3(?string $cuoShi3): static
     {
         $this->cuoShi3 = $cuoShi3;
+
+        return $this;
+    }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(?string $type): static
+    {
+        $this->type = $type;
 
         return $this;
     }

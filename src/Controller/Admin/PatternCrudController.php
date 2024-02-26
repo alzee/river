@@ -11,6 +11,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use App\Admin\Field\VichImageField;
 
 class PatternCrudController extends AbstractCrudController
 {
@@ -29,7 +31,21 @@ class PatternCrudController extends AbstractCrudController
         
         // yield FormField::addColumn(3);
         // yield FormField::addRow();
-        yield IdField::new('id')->onlyOnIndex();
+        if ($pageName === 'index') {
+            yield IdField::new('id');
+            yield TextField::new('SN');
+            yield TextField::new('name');
+            yield TextField::new('shiShiFuZeRen');
+            yield TextField::new('zhuanTiFuZeRen');
+            yield TextField::new('location');
+            yield NumberField::new('latitude');
+            yield NumberField::new('longitude');
+            yield NumberField::new('area');
+            yield TextField::new('tuRangZhiDi');
+            yield TextField::new('yanJianChengDu');
+            yield ImageField::new('image')->setBasePath('images');
+            return;
+        }
         
         yield FormField::addColumn(12);
         yield FormField::addFieldset('基本信息');
@@ -61,7 +77,6 @@ class PatternCrudController extends AbstractCrudController
         yield NumberField::new('latitude');
         yield NumberField::new('longitude');
         yield NumberField::new('area');
-        if ($pageName === 'index') return;
         yield TextField::new('tuRangZhiDi');
         yield TextField::new('yanJianChengDu');
         yield TextField::new('diLiDengJi');
@@ -101,8 +116,8 @@ class PatternCrudController extends AbstractCrudController
         yield TextField::new('nongYiZaiPeiTeDian')->setColumns(6);
         yield TextField::new('genZongJianCeFangAn')->setColumns(6);
         yield TextField::new('zuZhiShiShiXieTong')->setColumns(6);
-        yield TextField::new('image');
         yield TextField::new('zhongZiPinZhong')->setColumns(6);
+        yield VichImageField::new('imageFile', 'Image');
         
         yield FormField::addColumn(4);
         yield FormField::addFieldset('审批审核');

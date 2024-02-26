@@ -9,6 +9,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use App\Entity\Cost;
 use App\Entity\Fertilizer;
 use App\Entity\Irrigation;
@@ -50,15 +52,33 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('The Label', 'fas fa-list', Pattern::class);
-        yield MenuItem::linkToCrud('The Label', 'fas fa-list', Soil::class);
-        yield MenuItem::linkToCrud('The Label', 'fas fa-list', Seed::class);
-        yield MenuItem::linkToCrud('The Label', 'fas fa-list', Irrigation::class);
-        yield MenuItem::linkToCrud('The Label', 'fas fa-list', Fertilizer::class);
-        yield MenuItem::linkToCrud('The Label', 'fas fa-list', Tracking::class);
-        yield MenuItem::linkToCrud('The Label', 'fas fa-list', Cost::class);
-        yield MenuItem::linkToCrud('The Label', 'fas fa-list', User::class);
+        yield MenuItem::section('Content Management');
+        // yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
+        yield MenuItem::linkToCrud('Pattern', 'fas fa-memory', Pattern::class);
+        yield MenuItem::linkToCrud('Soil', 'fas fa-earth', Soil::class);
+        yield MenuItem::linkToCrud('Irrigation', 'fas fa-droplet', Seed::class);
+        yield MenuItem::linkToCrud('Fertilizer', 'fas fa-plant-wilt', Irrigation::class);
+        yield MenuItem::linkToCrud('Seed', 'fas fa-seedling', Fertilizer::class);
+        yield MenuItem::linkToCrud('Tracking', 'fas fa-eye', Tracking::class);
+        yield MenuItem::linkToCrud('Cost', 'fas fa-money-bill', Cost::class);
+        yield MenuItem::linkToCrud('User', 'fas fa-users', User::class);
+        
+        yield MenuItem::section('Settings');
+        yield MenuItem::linkToCrud('Change Password', 'fas fa-key', User::class)
+            ->setQueryParameter('action', 'chpw')
+            ->setAction('edit')
+            // ->setEntityId($this->getUser()->getId())
+            ;
+        
+        if ($this->isGranted('ROLE_SUPER_ADMIN')) {
+            yield MenuItem::section('Super Admin');
+            yield MenuItem::linkToCrud('Soil', 'fas fa-earth', Soil::class);
+            yield MenuItem::linkToCrud('Irrigation', 'fas fa-droplet', Irrigation::class);
+            yield MenuItem::linkToCrud('Fertilizer', 'fas fa-plant-wilt', Fertilizer::class);
+            yield MenuItem::linkToCrud('Seed', 'fas fa-seedling', Seed::class);
+            yield MenuItem::linkToCrud('Tracking', 'fas fa-eye', Tracking::class);
+            yield MenuItem::linkToCrud('Cost', 'fas fa-money-bill', Cost::class);
+        }
     }
 
     public function configureCrud(): Crud
@@ -68,6 +88,20 @@ class DashboardController extends AbstractDashboardController
             ->setTimezone('Asia/Shanghai')
             ->setDateTimeFormat('yyyy/MM/dd HH:mm')
             ->setDefaultSort(['id' => 'DESC'])
+        ;
+    }
+
+    public function configureActions(): Actions
+    {
+        return Actions::new()
+            // ->disable('delete')
+            ->add('detail', 'edit')
+            ->add('index', 'edit')
+            ->add('index', 'new')
+            ->add('index', 'delete')
+            ->add(Crud::PAGE_NEW, Action::SAVE_AND_RETURN)
+            ->add(Crud::PAGE_EDIT, Action::SAVE_AND_RETURN)
+            ->add(Crud::PAGE_EDIT, Action::SAVE_AND_CONTINUE)
         ;
     }
 }

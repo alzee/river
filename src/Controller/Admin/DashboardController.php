@@ -52,7 +52,7 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::section('Content Management');
+        yield MenuItem::section('Pattern Management');
         // yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Pattern List', 'fas fa-memory', Pattern::class)
             ->setController(PatternCrudController::class)

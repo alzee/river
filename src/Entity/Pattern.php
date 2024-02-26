@@ -15,6 +15,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 use ApiPlatform\Metadata\ApiFilter;
 use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
 use ApiPlatform\Doctrine\Orm\Filter\OrderFilter;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[Vich\Uploadable]
 #[ORM\Entity(repositoryClass: PatternRepository::class)]
@@ -24,6 +25,13 @@ use ApiPlatform\Doctrine\Orm\Filter\OrderFilter;
 )]
 #[ApiFilter(SearchFilter::class, properties: ['id' => 'exact'])]
 #[ApiFilter(OrderFilter::class, properties: ['id'])]
+#[UniqueEntity('name',
+    message: 'This name is already in use',
+)]
+#[UniqueEntity(
+    fields: 'SN',
+    message: 'SN is already in use',
+)]
 class Pattern
 {
     #[ORM\Id]

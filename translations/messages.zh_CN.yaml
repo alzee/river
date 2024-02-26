@@ -18,7 +18,7 @@ Category: 类别
 Category Management: 类别管理
 Tag: 标签
 Tag Management: 标签管理
-Image: 标题图片
+Image: 田块照片
 Images: 更多图片
 Conf: 设置
 Created At: 创建于
@@ -42,105 +42,109 @@ Submit: 提交
 Label: 标签
 Changelog: 更新日志
 Icon: 图标
-Soils:
-Irrigations:
-Fertilizers:
-Seeds:
-Trackings:
-Costs:
+Pattern: 模式总表
+Soil: 理化本底
+Irrigation: 灌排协同
+Fertilizer: 消障培肥
+Seed: 种子农艺
+Tracking: 跟踪监测
+Cost: 成本效益
+Soils: 理化本底
+Irrigations: 灌排协同
+Fertilizers: 消障培肥
+Seeds: 种子农艺
+Trackings: 跟踪监测
+Costs: 成本效益
   
 # Pattern
-Location:
-Latitude:
-Longitude:
-Area:
-Tu Rang Zhi Di: 123
-Yan Jian Cheng Du:
-Di Li Deng Ji:
-Yan Jian Cheng Yin:
-Zhu Yao Zhang Ai:
-Zhong Zhi Zuo Wu:
-Guan Gai Xie Tong:
-Xiao Zhang Pei Fei:
-Zhong Zi Nong Yi:
-Gen Zong Jian Ce:
-Mo Shi Dan Jia:
-Mo Shi Zong Jia:
-Zhong Shi Dan Chan:
-Guan Gai Ding E:
-Yan Jian Xia Jiang:
-Di Li Ti Sheng:
-Dan Chan Ti Sheng:
-Shui Xiao Ti Sheng:
-Yan Zheng Zhuan Ti:
-Zhuan Ti Fu Ze Ren:
-Shi Shi Fu Ze Ren:
-Guan Pai She Ji:
-Pei Fei She Ji:
-Zhong Zi Que Ren:
-Nong Yi She Ji:
-Jian Ce Shen He:
-Mo Shi Shen He:
-Ke Ti Shen Pi:
-Xiang Mu Pi Zhun:
-Gao Cheng:
-Yan Hua Jian Hua:
-Quan Yan Liang:
-You Ji Zhi Han Liang:
-EC:
-PH:
-Guan Gai Fang Shi:
-Fei Liao Shi Yong:
-Yu Qi Dan Chan:
-Chan Neng Ti Sheng:
-Tou Ru:
-Chan Chu:
-Guan Pai Xie Tong Cuo Shi:
-Xiao Zhang Pei Fei Yao Dian:
-Xiao Zhang Pei Fei Yao Dian:
-Nong Yi Zai Pei Te Dian:
-Gen Zong Jian Ce Fang An:
-Zu Zhi Shi Shi Xie Tong:
-Zhong Zi Pin Zhong:
+Location: 验证地点
+Latitude: 中心点北纬
+Longitude: 中心点东经
+Area: 面积
+Tu Rang Zhi Di: 土壤质地
+Yan Jian Cheng Du: 盐碱程度
+Di Li Deng Ji: 地力等级
+Yan Jian Cheng Yin: 盐碱成因
+Zhu Yao Zhang Ai: 主要障碍
+Zhong Zhi Zuo Wu: 种植作物
+Guan Gai Xie Tong: 灌溉协同
+Xiao Zhang Pei Fei: 消障培肥
+Zhong Zi Nong Yi: 种子农艺
+Gen Zong Jian Ce: 跟踪监测
+Mo Shi Dan Jia: 模式单价
+Mo Shi Zong Jia: 模式总价
+Zhong Shi Dan Chan: 中试单产
+Guan Gai Ding E: 灌溉定额
+Yan Jian Xia Jiang: 盐碱下降
+Di Li Ti Sheng: 地力提升
+Dan Chan Ti Sheng: 单产提升
+Shui Xiao Ti Sheng: 水效提升
+Yan Zheng Zhuan Ti: 验证专题
+Zhuan Ti Fu Ze Ren: 专题负责人
+Shi Shi Fu Ze Ren: 实施负责人
+Guan Pai She Ji: 灌排设计
+Pei Fei She Ji: 培肥设计
+Zhong Zi Que Ren: 种子确认
+Nong Yi She Ji: 农艺设计
+Jian Ce Shen He: 监测审核
+Mo Shi Shen He: 模式审核
+Ke Ti Shen Pi: 课题审批
+Xiang Mu Pi Zhun: 项目批准
+Gao Cheng: 高程
+Yan Hua Jian Hua: 盐化碱化
+Quan Yan Liang: 全盐量
+You Ji Zhi Han Liang: 有机质含量 
+EC: EC值
+PH: pH值
+Guan Gai Fang Shi: 灌溉方式
+Fei Liao Shi Yong: 肥料施用
+Yu Qi Dan Chan: 预期单产
+Chan Neng Ti Sheng: 产能提升
+Tou Ru: 投入
+Chan Chu: 产出
+Guan Pai Xie Tong Cuo Shi: 灌排协同措施
+Xiao Zhang Pei Fei Yao Dian: 消障培肥要点
+Nong Yi Zai Pei Te Dian: 农艺栽培特点
+Gen Zong Jian Ce Fang An: 跟踪监测方案
+Zu Zhi Shi Shi Xie Tong: 组织实施协同
+Zhong Zi Pin Zhong: 种子品种
 
-# Cost:
-Nei Rong:
-Zong Liang:
-Zong Jia:
-Dan Jia:
-Dan Wei:
-Fang Fa:
-Shi Yong Liang:
-Chan Liang:
-Cuo Shi1:
-Shi Yong Liang1:
-Cuo Shi2:
-Shi Yong Liang2:
-Cuo Shi3:
-Shi Yong Liang3:
-Cuo Shi4:
-Shi Yong Liang4:
-Guan Shui Liang:
-Nong Yi Ji Shu:
-Wu Li Jie Gou Gai Shan:
-Cuo Shi3:
-Nian Fen Sha:
-Gan Rong Liang:
-Kong Xi Du:
-Quan Dan:
-Quan Lin:
-Quan Jia:
-You Ji Zhi:
-Xiao Tai Dan:
-An Tai Dan:
-You Xiao Lin:
-You Xiao Jia:
-Jian Jie Dan:
-Quan Yan Liang:
-Bao He Han Shui Lv:
-Bao He Dao Shui Lv:
-Tian Jian Chi Shui Liang:
-Fang Fa She Bei:
-Jian Ce Pin Ci:
-Xian Di Yuan Cheng:
-Jian Ce Zhuan Ti:
+# Cost: 
+Nei Rong: 
+Zong Liang: 
+Zong Jia: 
+Dan Jia: 
+Dan Wei: 
+Fang Fa: 
+Shi Yong Liang: 
+Chan Liang: 
+Cuo Shi1: 
+Shi Yong Liang1: 
+Cuo Shi2: 
+Shi Yong Liang2: 
+Cuo Shi3:  措施3
+Shi Yong Liang3: 
+Cuo Shi4: 
+Shi Yong Liang4: 
+Guan Shui Liang: 
+Nong Yi Ji Shu: 
+Wu Li Jie Gou Gai Shan: 
+Nian Fen Sha: 
+Gan Rong Liang: 
+Kong Xi Du: 
+Quan Dan: 
+Quan Lin: 
+Quan Jia: 
+You Ji Zhi: 
+Xiao Tai Dan: 
+An Tai Dan: 
+You Xiao Lin: 
+You Xiao Jia: 
+Jian Jie Dan: 
+Bao He Han Shui Lv: 
+Bao He Dao Shui Lv: 
+Tian Jian Chi Shui Liang: 
+Fang Fa She Bei: 
+Jian Ce Pin Ci: 
+Xian Di Yuan Cheng: 
+Jian Ce Zhuan Ti: 

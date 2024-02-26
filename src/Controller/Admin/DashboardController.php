@@ -65,7 +65,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Seed', 'fas fa-seedling', Fertilizer::class);
         yield MenuItem::linkToCrud('Tracking', 'fas fa-eye', Tracking::class);
         yield MenuItem::linkToCrud('Cost', 'fas fa-money-bill', Cost::class);
-        yield MenuItem::linkToCrud('User', 'fas fa-users', User::class);
         
         yield MenuItem::section('Settings');
         yield MenuItem::linkToCrud('Change Password', 'fas fa-key', User::class)
@@ -73,6 +72,7 @@ class DashboardController extends AbstractDashboardController
             ->setAction('edit')
             ->setEntityId($this->getUser()->getId())
             ;
+        yield MenuItem::linkToCrud('User Management', 'fas fa-users', User::class);
         
         if ($this->isGranted('ROLE_SUPER_ADMIN')) {
             yield MenuItem::section('Super Admin');

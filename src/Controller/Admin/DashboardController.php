@@ -103,6 +103,7 @@ class DashboardController extends AbstractDashboardController
             ->add('index', 'edit')
             ->add('index', 'new')
             ->add('index', 'delete')
+            ->add('index', 'detail')
             ->add(Crud::PAGE_NEW, Action::SAVE_AND_RETURN)
             ->add(Crud::PAGE_EDIT, Action::SAVE_AND_RETURN)
             ->add(Crud::PAGE_EDIT, Action::SAVE_AND_CONTINUE)

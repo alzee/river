@@ -20,9 +20,12 @@ class PatternCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
+        $disabled = true;
+        if ($pageName === 'new') $disabled = false;
+        
         yield IdField::new('id')->onlyOnIndex();
-        yield TextField::new('name');
-        yield TextField::new('SN');
+        yield TextField::new('name')->setDisabled($disabled);
+        yield TextField::new('SN')->setDisabled($disabled);
         yield TextField::new('location');
         yield NumberField::new('latitude');
         yield NumberField::new('longitude');

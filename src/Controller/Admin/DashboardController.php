@@ -67,7 +67,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Change Password', 'fas fa-key', User::class)
             ->setQueryParameter('action', 'chpw')
             ->setAction('edit')
-            // ->setEntityId($this->getUser()->getId())
+            ->setEntityId($this->getUser()->getId())
             ;
         
         if ($this->isGranted('ROLE_SUPER_ADMIN')) {

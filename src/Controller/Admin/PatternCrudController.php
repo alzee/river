@@ -7,6 +7,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 
 class PatternCrudController extends AbstractCrudController
 {
@@ -15,14 +17,18 @@ class PatternCrudController extends AbstractCrudController
         return Pattern::class;
     }
 
-    /*
     public function configureFields(string $pageName): iterable
     {
-        return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
-        ];
+        yield IdField::new('id')->onlyOnIndex();
+        yield TextField::new('name');
+        // yield AssociationField::new('soils');
+        yield CollectionField::new('soils')
+            ->useEntryCrudForm()
+            ->renderExpanded()
+            ->allowAdd(false)
+            ->allowDelete(false)
+            ->onlyWhenUpdating()
+        ;
+        yield TextField::new('soil0.nianFenSha')->onlyOnIndex();
     }
-    */
 }

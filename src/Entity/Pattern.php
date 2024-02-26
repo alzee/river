@@ -284,6 +284,11 @@ class Pattern
     #[Groups(['read', 'write'])]
     private ?string $SN = null;
     
+    public function getSoil0()
+    {
+        return $this->getSoils()[0];
+    }
+    
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();

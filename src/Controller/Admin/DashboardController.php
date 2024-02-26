@@ -56,7 +56,7 @@ class DashboardController extends AbstractDashboardController
         // yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Pattern', 'fas fa-memory', Pattern::class);
         yield MenuItem::linkToCrud('Soil', 'fas fa-earth', Pattern::class)
-            // ->setController(ReturnToMeCrudController::class)
+            ->setController(PatternSoilCrudController::class)
             ;
         yield MenuItem::linkToCrud('Irrigation', 'fas fa-droplet', Seed::class);
         yield MenuItem::linkToCrud('Fertilizer', 'fas fa-plant-wilt', Irrigation::class);

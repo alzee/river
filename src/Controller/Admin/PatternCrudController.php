@@ -23,9 +23,15 @@ class PatternCrudController extends AbstractCrudController
         $disabled = true;
         if ($pageName === 'new') $disabled = false;
         
+        $help = '4位数字，如 5101';
+        if ($pageName == 'edit') $help = '';
+        
         yield IdField::new('id')->onlyOnIndex();
         yield TextField::new('name')->setDisabled($disabled);
-        yield TextField::new('SN')->setDisabled($disabled);
+        yield TextField::new('SN')
+            ->setHelp('4位数字，如 5101')
+            ->setHelp($help)
+            ->setDisabled($disabled);
         yield TextField::new('location');
         yield NumberField::new('latitude');
         yield NumberField::new('longitude');

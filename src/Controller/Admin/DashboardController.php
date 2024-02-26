@@ -47,7 +47,7 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('River');
+            ->setTitle('河套灌区节水控盐技术模式');
     }
 
     public function configureMenuItems(): iterable

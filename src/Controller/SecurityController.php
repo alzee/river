@@ -10,17 +10,14 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use App\Entity\User;
 use Doctrine\Persistence\ManagerRegistry;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
-use App\Service\Wx;
 
 class SecurityController extends AbstractDashboardController
 {
     private $doctrine;
-    private $wx;
 
-    public function __construct(ManagerRegistry $doctrine, Wx $wx)
+    public function __construct(ManagerRegistry $doctrine)
     {
         $this->doctrine = $doctrine;
-        $this->wx = $wx;
     }
 
     #[Route(path: '/login', name: 'app_login')]
@@ -35,7 +32,14 @@ class SecurityController extends AbstractDashboardController
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
+        // return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
+        return $this->render('@EasyAdmin/page/login.html.twig', [
+          'last_username' => $lastUsername,
+          'error' => $error,
+          // 'page_title' => $conf->getSiteName(),
+          'csrf_token_intention' => 'authenticate',
+          'target_path' => $this->generateUrl('admin'),
+        ]);
     }
 
     #[Route(path: '/logout', name: 'app_logout')]
@@ -67,38 +71,6 @@ class SecurityController extends AbstractDashboardController
                 "data" => $data
             ];
         }
-        return $this->json($resp);
-    }
-
-    #[Route(path: '/api/wxlogin', name: 'api_wx_login', methods: ['POST'])]
-    public function wxLogin(Request $request)
-    {
-        $data = json_decode($request->getContent());
-        $code = $data->code;
-        $openid = $this->wx->getOpenid($code);
-
-        $user = $this->doctrine->getRepository(User::class)->findOneBy(['openid' => $openid]);
-        $em = $this->doctrine->getManager();
-        if (is_null($user)) {
-            // create
-            $user = new User();
-            $user->setOpenid($openid);
-            if (isset($data->referrerId)) {
-                $referrer = $this->doctrine->getRepository(User::class)->find($data->referrerId);
-                if ($referrer) {
-                    $user->setReferrer($referrer);
-                }
-            }
-            $em->persist($user);
-            $em->flush();
-        }
-        
-        $resp = [
-            "id" => $user->getId(),
-            "roles" => $user->getRoles(),
-            "name" => $user->getName(),
-            "phone" => $user->getPhone(),
-        ];
         return $this->json($resp);
     }
 }

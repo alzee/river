@@ -68,6 +68,11 @@ class Fertilizer
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $type = null;
+    
+    public function __toString()
+    {
+        return $this->type;
+    }
 
     public function getId(): ?int
     {

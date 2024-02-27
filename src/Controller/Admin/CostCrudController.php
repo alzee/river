@@ -7,6 +7,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
@@ -29,7 +30,7 @@ class CostCrudController extends AbstractCrudController
         yield TextField::new('zongLiang')
             ->setColumns(3)
         ;
-        yield TextField::new('zongJia')
+        yield NumberField::new('zongJia')
             ->setColumns(3)
         ;
         yield TextField::new('danJia')

@@ -8,6 +8,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 
 class SoilCrudController extends AbstractCrudController
 {
@@ -18,8 +19,16 @@ class SoilCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        yield IdField::new('id')->onlyOnIndex();
-        yield AssociationField::new('pattern');
-        yield TextField::new('nianFenSha');
+        // yield AssociationField::new('pattern');
+        // yield FormField::addColumn(12);
+        yield TextField::new('nianFenSha')
+            ->setColumns(4)
+            ;
+        yield TextField::new('tuRangZhiDi')
+            ->setColumns(4)
+            ;
+        yield TextField::new('ganRongLiang')
+            ->setColumns(4)
+            ;
     }
 }

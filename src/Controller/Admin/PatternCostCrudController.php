@@ -49,13 +49,7 @@ class PatternCostCrudController extends AbstractCrudController
         ;
         
         if ($pageName === 'index') {
-            yield TextField::new('soil0.nianFenSha', 'Nian Fen Sha');
-            yield TextField::new('soil0.tuRangZhiDi', 'Tu Rang Zhi Di');
-            yield TextField::new('soil0.ganRongLiang', 'Gan Rong Liang');
-            yield TextField::new('soil0.kongXiDu', 'Kong Xi Du');
-            yield TextField::new('soil0.quanDan', 'Quan Dan');
-            yield TextField::new('soil0.quanLin', 'Quan Lin');
-            yield TextField::new('soil0.quanJia', 'Quan Jia');
+            // yield TextField::new('cost0.nianFenSha', 'Nian Fen Sha');
             return;
         }
      

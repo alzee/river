@@ -59,7 +59,7 @@ class PatternTrackingCrudController extends AbstractCrudController
             return;
         }
      
-        yield CollectionField::new('soils')
+        yield CollectionField::new('trackings')
             ->useEntryCrudForm()
             ->renderExpanded()
             ->allowAdd(false)

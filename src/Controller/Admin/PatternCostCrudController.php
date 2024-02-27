@@ -59,7 +59,7 @@ class PatternCostCrudController extends AbstractCrudController
             return;
         }
      
-        yield CollectionField::new('soils')
+        yield CollectionField::new('costs')
             ->useEntryCrudForm()
             ->renderExpanded()
             ->allowAdd(false)

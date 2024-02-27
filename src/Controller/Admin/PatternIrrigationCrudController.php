@@ -59,7 +59,7 @@ class PatternIrrigationCrudController extends AbstractCrudController
             return;
         }
      
-        yield CollectionField::new('soils')
+        yield CollectionField::new('irrigations')
             ->useEntryCrudForm()
             ->renderExpanded()
             ->allowAdd(false)

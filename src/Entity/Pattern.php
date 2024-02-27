@@ -264,27 +264,27 @@ class Pattern
     #[Groups(['read', 'write'])]
     private ?string $zhongZiPinZhong = null;
 
-    #[ORM\OneToMany(targetEntity: Soil::class, mappedBy: 'pattern')]
+    #[ORM\OneToMany(targetEntity: Soil::class, mappedBy: 'pattern', cascade: ["remove"])]
     #[Groups(['read', 'write'])]
     private Collection $soils;
 
-    #[ORM\OneToMany(targetEntity: Irrigation::class, mappedBy: 'pattern', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: Irrigation::class, mappedBy: 'pattern', cascade: ["remove"], orphanRemoval: true)]
     #[Groups(['read', 'write'])]
     private Collection $irrigations;
 
-    #[ORM\OneToMany(targetEntity: Fertilizer::class, mappedBy: 'pattern', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: Fertilizer::class, mappedBy: 'pattern', cascade: ["remove"], orphanRemoval: true)]
     #[Groups(['read', 'write'])]
     private Collection $fertilizers;
 
-    #[ORM\OneToMany(targetEntity: Seed::class, mappedBy: 'pattern', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: Seed::class, mappedBy: 'pattern', cascade: ["remove"], orphanRemoval: true)]
     #[Groups(['read', 'write'])]
     private Collection $seeds;
 
-    #[ORM\OneToMany(targetEntity: Tracking::class, mappedBy: 'pattern', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: Tracking::class, mappedBy: 'pattern', cascade: ["remove"], orphanRemoval: true)]
     #[Groups(['read', 'write'])]
     private Collection $trackings;
 
-    #[ORM\OneToMany(targetEntity: Cost::class, mappedBy: 'pattern', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: Cost::class, mappedBy: 'pattern', cascade: ["remove"], orphanRemoval: true)]
     #[Groups(['read', 'write'])]
     private Collection $costs;
 

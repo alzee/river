@@ -48,7 +48,7 @@ class DashboardController extends AbstractDashboardController
     {
         return Dashboard::new()
             ->setTitle('河套灌区节水控盐技术模式')
-            // ->renderContentMaximized()
+            ->renderContentMaximized()
             // ->renderSidebarMinimized()
         ;
     }

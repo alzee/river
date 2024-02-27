@@ -297,6 +297,31 @@ class Pattern
         return $this->getSoils()[0];
     }
     
+    public function getCost0()
+    {
+        return $this->getCosts()[0];
+    }
+    
+    public function getFertilizer0()
+    {
+        return $this->getFertilizers()[0];
+    }
+    
+    public function getIrrigation0()
+    {
+        return $this->getIrrigations()[0];
+    }
+    
+    public function getSeed0()
+    {
+        return $this->getSeeds()[0];
+    }
+    
+    public function getTracking0()
+    {
+        return $this->getTrackings()[0];
+    }
+    
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();

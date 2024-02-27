@@ -39,17 +39,25 @@ class PatternSoilCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        yield IdField::new('id')->onlyOnIndex();
-        // yield FormField::addColumn(12);
         yield TextField::new('SN')
             ->setDisabled()
             ->setColumns(4)
         ;
-        yield TextField::new('name')
+        yield TextField::new('name', 'Pattern Name')
             ->setDisabled()
             ->setColumns(8)
         ;
-        // yield AssociationField::new('soils');
+        
+        if ($pageName === 'index') {
+            yield TextField::new('soil0.nianFenSha', 'Nian Fen Sha');
+            yield TextField::new('soil0.tuRangZhiDi', 'Tu Rang Zhi Di');
+            yield TextField::new('soil0.ganRongLiang', 'Gan Rong Liang');
+            yield TextField::new('soil0.kongXiDu', 'Kong Xi Du');
+            yield TextField::new('soil0.quanDan', 'Quan Dan');
+            yield TextField::new('soil0.quanLin', 'Quan Lin');
+            yield TextField::new('soil0.quanJia', 'Quan Jia');
+            return;
+        }
      
         yield CollectionField::new('soils')
             ->useEntryCrudForm()
@@ -59,6 +67,5 @@ class PatternSoilCrudController extends AbstractCrudController
             ->onlyWhenUpdating()
             ->setColumns(12)
         ;
-        yield TextField::new('soil0.nianFenSha', 'nianFenSha')->onlyOnIndex();
     }
 }

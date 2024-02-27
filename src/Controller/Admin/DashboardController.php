@@ -56,15 +56,25 @@ class DashboardController extends AbstractDashboardController
         // yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Pattern List', 'fas fa-memory', Pattern::class)
             ->setController(PatternCrudController::class)
-            ;
+        ;
         yield MenuItem::linkToCrud('Soil', 'fas fa-earth', Pattern::class)
             ->setController(PatternSoilCrudController::class)
-            ;
-        yield MenuItem::linkToCrud('Irrigation', 'fas fa-droplet', Seed::class);
-        yield MenuItem::linkToCrud('Fertilizer', 'fas fa-plant-wilt', Irrigation::class);
-        yield MenuItem::linkToCrud('Seed', 'fas fa-seedling', Fertilizer::class);
-        yield MenuItem::linkToCrud('Tracking', 'fas fa-eye', Tracking::class);
-        yield MenuItem::linkToCrud('Cost', 'fas fa-money-bill', Cost::class);
+        ;
+        yield MenuItem::linkToCrud('Irrigation', 'fas fa-droplet', Pattern::class)
+            ->setController(PatternIrrigationCrudController::class)
+        ;
+        yield MenuItem::linkToCrud('Fertilizer', 'fas fa-plant-wilt', Pattern::class)
+            ->setController(PatternFertilizerCrudController::class)
+        ;
+        yield MenuItem::linkToCrud('Seed', 'fas fa-seedling', Pattern::class)
+            ->setController(PatternSeedCrudController::class)
+        ;
+        yield MenuItem::linkToCrud('Tracking', 'fas fa-eye', Pattern::class)
+            ->setController(PatternTrackingCrudController::class)
+        ;
+        yield MenuItem::linkToCrud('Cost', 'fas fa-money-bill', Pattern::class)
+            ->setController(PatternCostCrudController::class)
+        ;
         
         yield MenuItem::section('Settings');
         yield MenuItem::linkToCrud('Change Password', 'fas fa-key', User::class)

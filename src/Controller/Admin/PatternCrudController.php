@@ -34,7 +34,7 @@ class PatternCrudController extends AbstractCrudController
         if ($pageName === 'index') {
             yield IdField::new('id');
             yield TextField::new('SN');
-            yield TextField::new('name');
+            yield TextField::new('name', 'Pattern Name');
             yield TextField::new('shiShiFuZeRen');
             yield TextField::new('zhuanTiFuZeRen');
             yield TextField::new('location');
@@ -63,7 +63,7 @@ class PatternCrudController extends AbstractCrudController
         ;
         
         
-        yield TextField::new('name')
+        yield TextField::new('name', 'Pattern Name')
             ->setDisabled($disabled)
             ->setColumns(8)
         ;

@@ -19,16 +19,62 @@ class SoilCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        // yield AssociationField::new('pattern');
-        // yield FormField::addColumn(12);
         yield TextField::new('nianFenSha')
-            ->setColumns(4)
+            ->setColumns(3)
             ;
         yield TextField::new('tuRangZhiDi')
-            ->setColumns(4)
+            ->setColumns(3)
             ;
         yield TextField::new('ganRongLiang')
-            ->setColumns(4)
+            ->setColumns(3)
+            ;
+        yield TextField::new('kongXiDu')
+            ->setColumns(3)
+            ;
+        yield TextField::new('quanDan')
+            ->setColumns(3)
+            ;
+        yield TextField::new('quanLin')
+            ->setColumns(3)
+            ;
+        yield TextField::new('quanJia')
+            ->setColumns(3)
+            ;
+        yield TextField::new('youJiZhi')
+            ->setColumns(3)
+            ;
+        yield TextField::new('xiaoTaiDan')
+            ->setColumns(3)
+            ;
+        yield TextField::new('anTaiDan')
+            ->setColumns(3)
+            ;
+        yield TextField::new('youXiaoLin')
+            ->setColumns(3)
+            ;
+        yield TextField::new('youXiaoJia')
+            ->setColumns(3)
+            ;
+        yield TextField::new('jianJieDan')
+            ->setColumns(3)
+            ;
+        yield TextField::new('quanYanLiang')
+            ->setColumns(3)
+            ;
+        yield TextField::new('EC')
+            ->setColumns(3)
+            ;
+        yield TextField::new('PH')
+            ->setColumns(3)
+            ;
+        yield TextField::new('baoHeHanShuiLv')
+            ->setColumns(3)
+            ;
+        yield TextField::new('baoHeDaoShuiLv')
+            ->setColumns(3)
+            ;
+        yield TextField::new('tianJianChiShuiLiang')
+            ->setColumns(3)
             ;
     }
 }

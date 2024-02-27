@@ -13,6 +13,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use App\Admin\Field\VichImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 
 class PatternCrudController extends AbstractCrudController
 {

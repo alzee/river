@@ -23,6 +23,29 @@ class CostCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        yield AssociationField::new('pattern');
+        yield TextField::new('neiRong')
+            ->setColumns(3)
+        ;
+        yield TextField::new('zongLiang')
+            ->setColumns(3)
+        ;
+        yield TextField::new('zongJia')
+            ->setColumns(3)
+        ;
+        yield TextField::new('danJia')
+            ->setColumns(3)
+        ;
+        yield TextField::new('danWei')
+            ->setColumns(3)
+        ;
+        yield TextField::new('fangFa')
+            ->setColumns(3)
+        ;
+        yield TextField::new('shiYongLiang')
+            ->setColumns(3)
+        ;
+        yield TextField::new('chanLiang')
+            ->setColumns(3)
+        ;
     }
 }

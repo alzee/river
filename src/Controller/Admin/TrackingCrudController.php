@@ -15,14 +15,19 @@ class TrackingCrudController extends AbstractCrudController
         return Tracking::class;
     }
 
-    /*
     public function configureFields(string $pageName): iterable
     {
-        return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
-        ];
+        yield TextField::new('fangFaSheBei')
+            ->setColumns(3)
+        ;
+        yield TextField::new('jianCePinCi')
+            ->setColumns(3)
+        ;
+        yield TextField::new('xianDiYuanCheng')
+            ->setColumns(3)
+        ;
+        yield TextField::new('jianCeZhuanTi')
+            ->setColumns(3)
+        ;
     }
-    */
 }

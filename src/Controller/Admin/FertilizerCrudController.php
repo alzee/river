@@ -15,14 +15,34 @@ class FertilizerCrudController extends AbstractCrudController
         return Fertilizer::class;
     }
 
-    /*
     public function configureFields(string $pageName): iterable
     {
-        return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
-        ];
+        yield TextField::new('date')
+            ->setColumns(3)
+        ;
+        yield TextField::new('cuoShi1')
+            ->setColumns(3)
+        ;
+        yield TextField::new('shiYongLiang1')
+            ->setColumns(3)
+        ;
+        yield TextField::new('cuoShi2')
+            ->setColumns(3)
+        ;
+        yield TextField::new('shiYongLiang2')
+            ->setColumns(3)
+        ;
+        yield TextField::new('cuoShi3')
+            ->setColumns(3)
+        ;
+        yield TextField::new('shiYongLiang3')
+            ->setColumns(3)
+        ;
+        yield TextField::new('cuoShi4')
+            ->setColumns(3)
+        ;
+        yield TextField::new('shiYongLiang4')
+            ->setColumns(3)
+        ;
     }
-    */
 }

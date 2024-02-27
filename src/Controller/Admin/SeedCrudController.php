@@ -15,14 +15,19 @@ class SeedCrudController extends AbstractCrudController
         return Seed::class;
     }
 
-    /*
     public function configureFields(string $pageName): iterable
     {
-        return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
-        ];
+        yield TextField::new('date')
+            ->setColumns(3)
+        ;
+        yield TextField::new('nongYiJiShu')
+            ->setColumns(3)
+        ;
+        yield TextField::new('wuLiJieGouGaiShan')
+            ->setColumns(3)
+        ;
+        yield TextField::new('cuoShi3')
+            ->setColumns(3)
+        ;
     }
-    */
 }

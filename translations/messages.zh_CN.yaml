@@ -93,9 +93,9 @@ Ke Ti Shen Pi: 课题审批
 Xiang Mu Pi Zhun: 项目批准
 Gao Cheng: 高程
 Yan Hua Jian Hua: 盐化碱化
-Quan Yan Liang: 全盐量
+Quan Yan Liang: 全盐量(g/kg)
 You Ji Zhi Han Liang: 有机质含量 
-EC: EC值
+EC: EC(ds/m)
 PH: pH值
 Guan Gai Fang Shi: 灌溉方式
 Fei Liao Shi Yong: 肥料施用
@@ -111,41 +111,41 @@ Zu Zhi Shi Shi Xie Tong: 组织实施协同
 Zhong Zi Pin Zhong: 种子品种
 
 # Cost: 
-Nei Rong: 
-Zong Liang: 
-Zong Jia: 
-Dan Jia: 
-Dan Wei: 
-Fang Fa: 
-Shi Yong Liang: 
-Chan Liang: 
-Cuo Shi1: 
-Shi Yong Liang1: 
-Cuo Shi2: 
-Shi Yong Liang2: 
+Nei Rong: 内容
+Zong Liang: 总量
+Zong Jia: 总价
+Dan Jia: 单价
+Dan Wei: 单位
+Fang Fa: 方法
+Shi Yong Liang: 施用量
+Chan Liang: 产量
+Cuo Shi1: 措施1
+Shi Yong Liang1: 施用量/kg/亩
+Cuo Shi2: 措施2
+Shi Yong Liang2: 施用量/kg/亩
 Cuo Shi3:  措施3
-Shi Yong Liang3: 
-Cuo Shi4: 
-Shi Yong Liang4: 
-Guan Shui Liang: 
-Nong Yi Ji Shu: 
-Wu Li Jie Gou Gai Shan: 
-Nian Fen Sha: 
-Gan Rong Liang: 
-Kong Xi Du: 
-Quan Dan: 
-Quan Lin: 
-Quan Jia: 
-You Ji Zhi: 
-Xiao Tai Dan: 
-An Tai Dan: 
-You Xiao Lin: 
-You Xiao Jia: 
-Jian Jie Dan: 
-Bao He Han Shui Lv: 
-Bao He Dao Shui Lv: 
-Tian Jian Chi Shui Liang: 
-Fang Fa She Bei: 
-Jian Ce Pin Ci: 
-Xian Di Yuan Cheng: 
-Jian Ce Zhuan Ti: 
+Shi Yong Liang3: 施用量/kg/亩
+Cuo Shi4: 措施4
+Shi Yong Liang4: 施用量/kg/亩
+Guan Shui Liang: 灌水量/m³/亩
+Nong Yi Ji Shu: 农艺技术
+Wu Li Jie Gou Gai Shan: 物理结构改善
+Nian Fen Sha: 粘:粉:砂比例
+Gan Rong Liang: 干容重(mg/cm³)
+Kong Xi Du: 孔隙度(%)
+Quan Dan: 全氮(g/kg)
+Quan Lin: 全磷(g/kg)
+Quan Jia: 全钾(g/kg)
+You Ji Zhi: 有机质(g/kg)
+Xiao Tai Dan: 硝态氮(g/kg)
+An Tai Dan: 氨态氮(g/kg)
+You Xiao Lin: 有效磷(mg/kg)
+You Xiao Jia: 有效钾(mg/kg)
+Jian Jie Dan: 碱解氮(mg/kg)
+Bao He Han Shui Lv: 饱和含水率(cm³/cm³)
+Bao He Dao Shui Lv: 饱和导水率(cm/d)
+Tian Jian Chi Shui Liang: 田间持水量(cm³/cm³)
+Fang Fa She Bei: 方法设备
+Jian Ce Pin Ci: 监测频次
+Xian Di Yuan Cheng: 现地远程
+Jian Ce Zhuan Ti: 监测专题

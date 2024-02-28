@@ -33,12 +33,14 @@ class UserCrudController extends AbstractCrudController
     
     public function createIndexQueryBuilder(SearchDto $searchDto, EntityDto $entityDto, FieldCollection $fields, FilterCollection $filters): QueryBuilder
     {
-        $uid = $this->getUser()->getId();
         $response = $this->container->get(EntityRepository::class)->createQueryBuilder($searchDto, $entityDto, $fields, $filters);
-        $response
-            ->andWhere("entity.id != $uid")
+        if (!is_null($this->getUser())) {
+            $uid = $this->getUser()->getId();
+            $response
+                ->andWhere("entity.id != $uid")
             // ->andWhere("entity.roles LIKE '%ROLE_SUPER_ADMIN%'")
-        ;
+            ;
+        }
         return $response;
     }
 

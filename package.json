@@ -1,0 +1,25 @@
+{
+  "name": "river",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alzee/river.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alzee/river/issues"
+  },
+  "homepage": "https://github.com/alzee/river#readme",
+  "dependencies": {
+    "marked": "^12.0.0"
+  }
+}

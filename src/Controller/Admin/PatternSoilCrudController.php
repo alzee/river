@@ -13,6 +13,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 
 class PatternSoilCrudController extends AbstractCrudController
 {
@@ -51,7 +52,7 @@ class PatternSoilCrudController extends AbstractCrudController
         if ($pageName === 'index') {
             yield TextField::new('soil0.nianFenSha', 'Nian Fen Sha');
             yield TextField::new('soil0.tuRangZhiDi', 'Tu Rang Zhi Di');
-            yield TextField::new('soil0.ganRongLiang', 'Gan Rong Liang');
+            yield NumberField::new('soil0.ganRongLiang', 'Gan Rong Liang');
             yield TextField::new('soil0.kongXiDu', 'Kong Xi Du');
             yield TextField::new('soil0.quanDan', 'Quan Dan');
             yield TextField::new('soil0.quanLin', 'Quan Lin');

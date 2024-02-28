@@ -9,6 +9,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 
 class SoilCrudController extends AbstractCrudController
 {
@@ -25,7 +26,7 @@ class SoilCrudController extends AbstractCrudController
         yield TextField::new('tuRangZhiDi')
             ->setColumns(3)
             ;
-        yield TextField::new('ganRongLiang')
+        yield NumberField::new('ganRongLiang')
             ->setColumns(3)
             ;
         yield TextField::new('kongXiDu')

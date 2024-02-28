@@ -49,28 +49,28 @@ class PatternIrrigationCrudController extends AbstractCrudController
         ;
         
         yield TextField::new('guanGaiFangShi')
-            ->setColumns(4)
+            ->setColumns(2)
         ;
         yield TextField::new('guanGaiCiShu')
-            ->setColumns(4)
+            ->setColumns(2)
         ;
         yield TextField::new('zongGuanShuiLiang')
-            ->setColumns(4)
+            ->setColumns(2)
         ;
         yield TextField::new('paiShuiFangShi')
-            ->setColumns(4)
+            ->setColumns(2)
         ;
         yield TextField::new('paiShuiMaiShen')
-            ->setColumns(4)
+            ->setColumns(2)
         ;
         yield TextField::new('paiShuiJianJu')
-            ->setColumns(4)
+            ->setColumns(2)
         ;
         yield TextField::new('huiYongNengLi')
-            ->setColumns(4)
+            ->setColumns(2)
         ;
         yield TextField::new('huiYongKongZhiShuiZhi')
-            ->setColumns(4)
+            ->setColumns(2)
         ;
         
         // if ($pageName === 'index') return;

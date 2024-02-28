@@ -54,7 +54,7 @@ class PatternCostCrudController extends AbstractCrudController
         yield TextField::new('zhuZeZhuanTi')
             ->setColumns(4)
         ;
-        yield TextField::new('reJiZongTouRu')
+        yield TextField::new('sheJiZongTouRu')
             ->setColumns(4)
         ;
         yield TextField::new('heSuanZongTouRu')

@@ -297,6 +297,27 @@ class Pattern
     #[ORM\Column(length: 255)]
     #[Groups(['read', 'write'])]
     private ?string $SN = null;
+
+    #[ORM\Column(type: Types::SMALLINT, nullable: true)]
+    private ?int $guanGaiCiShu = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $zongGuanShuiLiang = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $paiShuiFangShi = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?float $paiShuiMaiShen = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $paiShuiJianJu = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $huiYongNengLi = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?float $huiYongKongZhiShuiZhi = null;
     
     public function getSoil0()
     {
@@ -1213,6 +1234,90 @@ class Pattern
     public function setSN(string $SN): static
     {
         $this->SN = $SN;
+
+        return $this;
+    }
+
+    public function getGuanGaiCiShu(): ?int
+    {
+        return $this->guanGaiCiShu;
+    }
+
+    public function setGuanGaiCiShu(?int $guanGaiCiShu): static
+    {
+        $this->guanGaiCiShu = $guanGaiCiShu;
+
+        return $this;
+    }
+
+    public function getZongGuanShuiLiang(): ?int
+    {
+        return $this->zongGuanShuiLiang;
+    }
+
+    public function setZongGuanShuiLiang(?int $zongGuanShuiLiang): static
+    {
+        $this->zongGuanShuiLiang = $zongGuanShuiLiang;
+
+        return $this;
+    }
+
+    public function getPaiShuiFangShi(): ?string
+    {
+        return $this->paiShuiFangShi;
+    }
+
+    public function setPaiShuiFangShi(?string $paiShuiFangShi): static
+    {
+        $this->paiShuiFangShi = $paiShuiFangShi;
+
+        return $this;
+    }
+
+    public function getPaiShuiMaiShen(): ?float
+    {
+        return $this->paiShuiMaiShen;
+    }
+
+    public function setPaiShuiMaiShen(?float $paiShuiMaiShen): static
+    {
+        $this->paiShuiMaiShen = $paiShuiMaiShen;
+
+        return $this;
+    }
+
+    public function getPaiShuiJianJu(): ?int
+    {
+        return $this->paiShuiJianJu;
+    }
+
+    public function setPaiShuiJianJu(?int $paiShuiJianJu): static
+    {
+        $this->paiShuiJianJu = $paiShuiJianJu;
+
+        return $this;
+    }
+
+    public function getHuiYongNengLi(): ?int
+    {
+        return $this->huiYongNengLi;
+    }
+
+    public function setHuiYongNengLi(?int $huiYongNengLi): static
+    {
+        $this->huiYongNengLi = $huiYongNengLi;
+
+        return $this;
+    }
+
+    public function getHuiYongKongZhiShuiZhi(): ?float
+    {
+        return $this->huiYongKongZhiShuiZhi;
+    }
+
+    public function setHuiYongKongZhiShuiZhi(?float $huiYongKongZhiShuiZhi): static
+    {
+        $this->huiYongKongZhiShuiZhi = $huiYongKongZhiShuiZhi;
 
         return $this;
     }

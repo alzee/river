@@ -318,6 +318,27 @@ class Pattern
 
     #[ORM\Column(nullable: true)]
     private ?float $huiYongKongZhiShuiZhi = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $zhongShiMianJi = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $zhuZeZhuanTi = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?float $sheJiZongTouRu = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?float $heSuanZongTouRu = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $muJunTouRu = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $muJunChanChu = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?float $chanTouBi = null;
     
     public function getSoil0()
     {
@@ -1318,6 +1339,90 @@ class Pattern
     public function setHuiYongKongZhiShuiZhi(?float $huiYongKongZhiShuiZhi): static
     {
         $this->huiYongKongZhiShuiZhi = $huiYongKongZhiShuiZhi;
+
+        return $this;
+    }
+
+    public function getZhongShiMianJi(): ?int
+    {
+        return $this->zhongShiMianJi;
+    }
+
+    public function setZhongShiMianJi(?int $zhongShiMianJi): static
+    {
+        $this->zhongShiMianJi = $zhongShiMianJi;
+
+        return $this;
+    }
+
+    public function getZhuZeZhuanTi(): ?int
+    {
+        return $this->zhuZeZhuanTi;
+    }
+
+    public function setZhuZeZhuanTi(?int $zhuZeZhuanTi): static
+    {
+        $this->zhuZeZhuanTi = $zhuZeZhuanTi;
+
+        return $this;
+    }
+
+    public function getSheJiZongTouRu(): ?float
+    {
+        return $this->sheJiZongTouRu;
+    }
+
+    public function setSheJiZongTouRu(?float $sheJiZongTouRu): static
+    {
+        $this->sheJiZongTouRu = $sheJiZongTouRu;
+
+        return $this;
+    }
+
+    public function getHeSuanZongTouRu(): ?float
+    {
+        return $this->heSuanZongTouRu;
+    }
+
+    public function setHeSuanZongTouRu(?float $heSuanZongTouRu): static
+    {
+        $this->heSuanZongTouRu = $heSuanZongTouRu;
+
+        return $this;
+    }
+
+    public function getMuJunTouRu(): ?int
+    {
+        return $this->muJunTouRu;
+    }
+
+    public function setMuJunTouRu(?int $muJunTouRu): static
+    {
+        $this->muJunTouRu = $muJunTouRu;
+
+        return $this;
+    }
+
+    public function getMuJunChanChu(): ?int
+    {
+        return $this->muJunChanChu;
+    }
+
+    public function setMuJunChanChu(?int $muJunChanChu): static
+    {
+        $this->muJunChanChu = $muJunChanChu;
+
+        return $this;
+    }
+
+    public function getChanTouBi(): ?float
+    {
+        return $this->chanTouBi;
+    }
+
+    public function setChanTouBi(?float $chanTouBi): static
+    {
+        $this->chanTouBi = $chanTouBi;
 
         return $this;
     }

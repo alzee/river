@@ -86,6 +86,7 @@ class DashboardController extends AbstractDashboardController
             // ->setEntityId($this->getUser()->getId())
             ;
         yield MenuItem::linkToCrud('User Management', 'fas fa-users', User::class);
+        yield MenuItem::linkToUrl('Changelog', 'fas fa-note-sticky', '/changelog/');
         
         if ($this->isGranted('ROLE_SUPER_ADMIN')) {
             yield MenuItem::section('Super Admin');

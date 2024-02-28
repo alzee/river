@@ -9,6 +9,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -48,25 +50,25 @@ class PatternCostCrudController extends AbstractCrudController
             ->setColumns(8)
         ;
         
-        yield TextField::new('zhongShiMianJi')
+        yield IntegerField::new('zhongShiMianJi')
             ->setColumns(4)
         ;
-        yield TextField::new('zhuZeZhuanTi')
+        yield IntegerField::new('zhuZeZhuanTi')
             ->setColumns(4)
         ;
-        yield TextField::new('sheJiZongTouRu')
+        yield NumberField::new('sheJiZongTouRu')
             ->setColumns(4)
         ;
-        yield TextField::new('heSuanZongTouRu')
+        yield NumberField::new('heSuanZongTouRu')
             ->setColumns(4)
         ;
-        yield TextField::new('muJunTouRu')
+        yield IntegerField::new('muJunTouRu')
             ->setColumns(4)
         ;
-        yield TextField::new('muJunChanChu')
+        yield IntegerField::new('muJunChanChu')
             ->setColumns(4)
         ;
-        yield TextField::new('chanTouBi')
+        yield NumberField::new('chanTouBi')
             ->setColumns(4)
         ;
             

@@ -9,6 +9,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -51,25 +53,25 @@ class PatternIrrigationCrudController extends AbstractCrudController
         yield TextField::new('guanGaiFangShi')
             ->setColumns(2)
         ;
-        yield TextField::new('guanGaiCiShu')
+        yield IntegerField::new('guanGaiCiShu')
             ->setColumns(2)
         ;
-        yield TextField::new('zongGuanShuiLiang')
+        yield IntegerField::new('zongGuanShuiLiang')
             ->setColumns(2)
         ;
         yield TextField::new('paiShuiFangShi')
             ->setColumns(2)
         ;
-        yield TextField::new('paiShuiMaiShen')
+        yield NumberField::new('paiShuiMaiShen')
             ->setColumns(2)
         ;
-        yield TextField::new('paiShuiJianJu')
+        yield IntegerField::new('paiShuiJianJu')
             ->setColumns(2)
         ;
-        yield TextField::new('huiYongNengLi')
+        yield IntegerField::new('huiYongNengLi')
             ->setColumns(2)
         ;
-        yield TextField::new('huiYongKongZhiShuiZhi')
+        yield NumberField::new('huiYongKongZhiShuiZhi')
             ->setColumns(2)
         ;
         

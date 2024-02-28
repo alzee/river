@@ -57,7 +57,7 @@ class PatternSoilCrudController extends AbstractCrudController
             yield TextField::new('soil0.quanDan', 'Quan Dan');
             yield TextField::new('soil0.quanLin', 'Quan Lin');
             yield TextField::new('soil0.quanJia', 'Quan Jia');
-            return;
+            // return;
         }
      
         yield CollectionField::new('soils')

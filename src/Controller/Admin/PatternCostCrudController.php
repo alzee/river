@@ -48,10 +48,29 @@ class PatternCostCrudController extends AbstractCrudController
             ->setColumns(8)
         ;
         
-        if ($pageName === 'index') {
-            // yield TextField::new('cost0.nianFenSha', 'Nian Fen Sha');
-            return;
-        }
+        yield TextField::new('zhongShiMianJi')
+            ->setColumns(4)
+        ;
+        yield TextField::new('zhuZeZhuanTi')
+            ->setColumns(4)
+        ;
+        yield TextField::new('reJiZongTouRu')
+            ->setColumns(4)
+        ;
+        yield TextField::new('heSuanZongTouRu')
+            ->setColumns(4)
+        ;
+        yield TextField::new('muJunTouRu')
+            ->setColumns(4)
+        ;
+        yield TextField::new('muJunChanChu')
+            ->setColumns(4)
+        ;
+        yield TextField::new('chanTouBi')
+            ->setColumns(4)
+        ;
+            
+        // if ($pageName === 'index') { return; }
      
         yield CollectionField::new('costs')
             ->useEntryCrudForm()

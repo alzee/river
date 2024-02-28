@@ -48,10 +48,14 @@ class PatternSeedCrudController extends AbstractCrudController
             ->setColumns(8)
         ;
         
-        if ($pageName === 'index') {
-            // yield TextField::new('seed0.nianFenSha', 'Nian Fen Sha');
-            return;
-        }
+        yield TextField::new('zhongZhiZuoWu')
+            ->setColumns(4)
+        ;
+        yield TextField::new('zhongZiPinZhong')
+            ->setColumns(4)
+        ;
+        
+        // if ($pageName === 'index') { return; }
      
         yield CollectionField::new('seeds')
             ->useEntryCrudForm()

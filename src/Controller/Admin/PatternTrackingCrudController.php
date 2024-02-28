@@ -48,10 +48,7 @@ class PatternTrackingCrudController extends AbstractCrudController
             ->setColumns(8)
         ;
         
-        if ($pageName === 'index') {
-            // yield TextField::new('tracking0.nianFenSha', 'Nian Fen Sha');
-            return;
-        }
+        // if ($pageName === 'index') { return; }
      
         yield CollectionField::new('trackings')
             ->useEntryCrudForm()

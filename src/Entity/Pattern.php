@@ -142,10 +142,12 @@ class Pattern
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Length(max: 3)]
     private ?string $zhuanTiFuZeRen = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Length(max: 3)]
     private ?string $shiShiFuZeRen = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -174,10 +176,12 @@ class Pattern
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Length(max: 3)]
     private ?string $keTiShenPi = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Length(max: 3)]
     private ?string $xiangMuPiZhun = null;
 
     #[ORM\Column(nullable: true)]
@@ -368,21 +372,27 @@ class Pattern
     private ?int $yuQiZongChan = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Length(max: 3)]
     private ?string $guanPaiXieTongShenHe = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Length(max: 3)]
     private ?string $xiaoZhangPeiFeiShenHe = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Length(max: 3)]
     private ?string $zhongZiNongYiShenHe = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Length(max: 3)]
     private ?string $genZongJianCeShenHe = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Length(max: 3)]
     private ?string $jiShuMoShiShenHe = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Length(max: 3)]
     private ?string $caiWuYuSuanShenHe = null;
     
     public function getSoil0()

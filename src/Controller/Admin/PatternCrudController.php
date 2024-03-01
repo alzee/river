@@ -121,14 +121,21 @@ class PatternCrudController extends AbstractCrudController
         
         yield FormField::addColumn(4);
         yield FormField::addFieldset('审批审核');
-        yield TextField::new('guanPaiSheJi');
-        yield TextField::new('peiFeiSheJi');
-        yield TextField::new('zhongZiQueRen');
-        yield TextField::new('nongYiSheJi');
-        yield TextField::new('jianCeShenHe');
-        yield TextField::new('moShiShenHe');
-        yield TextField::new('keTiShenPi');
-        yield TextField::new('xiangMuPiZhun');
+        yield TextField::new('guanPaiXieTongShenHe')->setColumns(6);
+        yield TextField::new('xiaoZhangPeiFeiShenHe')->setColumns(6);
+        yield TextField::new('zhongZiNongYiShenHe')->setColumns(6);
+        yield TextField::new('genZongJianCeShenHe')->setColumns(6);
+        yield TextField::new('jiShuMoShiShenHe')->setColumns(6);
+        yield TextField::new('caiWuYuSuanShenHe')->setColumns(6);
+        yield TextField::new('keTiShenPi')->setColumns(6);
+        yield TextField::new('xiangMuPiZhun')->setColumns(6);
+        
+        yield TextField::new('guanPaiSheJi')->setColumns(6);
+        yield TextField::new('peiFeiSheJi')->setColumns(6);
+        yield TextField::new('zhongZiQueRen')->setColumns(6);
+        yield TextField::new('nongYiSheJi')->setColumns(6);
+        yield TextField::new('jianCeShenHe')->setColumns(6);
+        yield TextField::new('moShiShenHe')->setColumns(6);
         
         yield FormField::addColumn(12);
         yield FormField::addFieldset('技术模式简述（每项不超过100字）');

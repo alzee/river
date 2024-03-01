@@ -116,7 +116,7 @@ class Pattern
 
     #[ORM\Column(nullable: true)]
     #[Groups(['read', 'write'])]
-    private ?float $guanGaiDingE = null;
+    private ?int $guanGaiDingE = null;
 
     #[ORM\Column(nullable: true)]
     #[Groups(['read', 'write'])]
@@ -626,12 +626,12 @@ class Pattern
         return $this;
     }
 
-    public function getGuanGaiDingE(): ?float
+    public function getGuanGaiDingE(): ?int
     {
         return $this->guanGaiDingE;
     }
 
-    public function setGuanGaiDingE(?float $guanGaiDingE): static
+    public function setGuanGaiDingE(?int $guanGaiDingE): static
     {
         $this->guanGaiDingE = $guanGaiDingE;
 

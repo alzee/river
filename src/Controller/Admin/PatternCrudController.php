@@ -100,7 +100,7 @@ class PatternCrudController extends AbstractCrudController
         yield FormField::addFieldset('技术模式');
         yield TextField::new('zhongZhiZuoWu')->setColumns(6);
         yield TextField::new('guanGaiFangShi')->setColumns(6);
-        yield NumberField::new('guanGaiDingE')->setColumns(6);
+        yield IntegerField::new('guanGaiDingE')->setColumns(6);
         yield TextField::new('paiShuiFangShi')->setColumns(6);
         yield TextField::new('xiaoZhangCuoShi')->setColumns(6);
         yield TextField::new('zengTanPeiFei')->setColumns(6);

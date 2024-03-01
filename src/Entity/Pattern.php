@@ -42,6 +42,7 @@ class Pattern
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Length(max: 27)]
     private ?string $location = null;
 
     #[ORM\Column(nullable: true)]
@@ -54,6 +55,7 @@ class Pattern
 
     #[ORM\Column(nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Range(min: 1000, max: 9999)]
     private ?int $area = null;
 
     #[ORM\Column(length: 255, nullable: true)]

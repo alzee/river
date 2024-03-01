@@ -78,7 +78,7 @@ class PatternCrudController extends AbstractCrudController
         yield TextField::new('location');
         yield NumberField::new('latitude');
         yield NumberField::new('longitude');
-        yield NumberField::new('area');
+        yield IntegerField::new('area');
         yield TextField::new('tuRangZhiDi');
         yield TextField::new('yanJianChengDu');
         yield TextField::new('diLiDengJi');

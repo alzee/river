@@ -30,10 +30,12 @@ class Soil
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['other_read', 'read', 'other_write'])]
+    #[Assert\Length(max: 8)]
     private ?string $nianFenSha = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['other_read', 'read', 'other_write'])]
+    #[Assert\Length(max: 3)]
     private ?string $tuRangZhiDi = null;
 
     #[ORM\Column(nullable: true)]

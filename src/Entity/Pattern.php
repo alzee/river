@@ -366,6 +366,24 @@ class Pattern
     #[ORM\Column(nullable: true)]
     #[Assert\Range(max: 9999)]
     private ?int $yuQiZongChan = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $guanPaiXieTongShenHe = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $xiaoZhangPeiFeiShenHe = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $zhongZiNongYiShenHe = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $genZongJianCeShenHe = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $jiShuMoShiShenHe = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $caiWuYuSuanShenHe = null;
     
     public function getSoil0()
     {
@@ -1498,6 +1516,78 @@ class Pattern
     public function setYuQiZongChan(?int $yuQiZongChan): static
     {
         $this->yuQiZongChan = $yuQiZongChan;
+
+        return $this;
+    }
+
+    public function getGuanPaiXieTongShenHe(): ?string
+    {
+        return $this->guanPaiXieTongShenHe;
+    }
+
+    public function setGuanPaiXieTongShenHe(?string $guanPaiXieTongShenHe): static
+    {
+        $this->guanPaiXieTongShenHe = $guanPaiXieTongShenHe;
+
+        return $this;
+    }
+
+    public function getXiaoZhangPeiFeiShenHe(): ?string
+    {
+        return $this->xiaoZhangPeiFeiShenHe;
+    }
+
+    public function setXiaoZhangPeiFeiShenHe(?string $xiaoZhangPeiFeiShenHe): static
+    {
+        $this->xiaoZhangPeiFeiShenHe = $xiaoZhangPeiFeiShenHe;
+
+        return $this;
+    }
+
+    public function getZhongZiNongYiShenHe(): ?string
+    {
+        return $this->zhongZiNongYiShenHe;
+    }
+
+    public function setZhongZiNongYiShenHe(?string $zhongZiNongYiShenHe): static
+    {
+        $this->zhongZiNongYiShenHe = $zhongZiNongYiShenHe;
+
+        return $this;
+    }
+
+    public function getGenZongJianCeShenHe(): ?string
+    {
+        return $this->genZongJianCeShenHe;
+    }
+
+    public function setGenZongJianCeShenHe(?string $genZongJianCeShenHe): static
+    {
+        $this->genZongJianCeShenHe = $genZongJianCeShenHe;
+
+        return $this;
+    }
+
+    public function getJiShuMoShiShenHe(): ?string
+    {
+        return $this->jiShuMoShiShenHe;
+    }
+
+    public function setJiShuMoShiShenHe(?string $jiShuMoShiShenHe): static
+    {
+        $this->jiShuMoShiShenHe = $jiShuMoShiShenHe;
+
+        return $this;
+    }
+
+    public function getCaiWuYuSuanShenHe(): ?string
+    {
+        return $this->caiWuYuSuanShenHe;
+    }
+
+    public function setCaiWuYuSuanShenHe(?string $caiWuYuSuanShenHe): static
+    {
+        $this->caiWuYuSuanShenHe = $caiWuYuSuanShenHe;
 
         return $this;
     }

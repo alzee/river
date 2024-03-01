@@ -27,7 +27,8 @@ class Irrigation
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['other_read', 'read', 'other_write'])]
-    private ?string $guanShuiLiang = null;
+    #[Assert\Range(max: 9999)]
+    private ?int $guanShuiLiang = null;
 
     #[ORM\ManyToOne(inversedBy: 'irrigations')]
     #[ORM\JoinColumn(nullable: false)]
@@ -51,12 +52,12 @@ class Irrigation
         return $this->id;
     }
 
-    public function getGuanShuiLiang(): ?string
+    public function getGuanShuiLiang(): ?int
     {
         return $this->guanShuiLiang;
     }
 
-    public function setGuanShuiLiang(string $guanShuiLiang): static
+    public function setGuanShuiLiang(int $guanShuiLiang): static
     {
         $this->guanShuiLiang = $guanShuiLiang;
 

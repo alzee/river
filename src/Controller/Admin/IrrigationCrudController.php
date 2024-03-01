@@ -22,7 +22,7 @@ class IrrigationCrudController extends AbstractCrudController
         yield DateField::new('date')
             ->setColumns(3)
             ;
-        yield TextField::new('guanShuiLiang')
+        yield IntegerField::new('guanShuiLiang')
             ->setColumns(3)
             ;
     }

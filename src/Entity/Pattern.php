@@ -329,9 +329,11 @@ class Pattern
     private ?int $SN = null;
 
     #[ORM\Column(type: Types::SMALLINT, nullable: true)]
+    #[Assert\Range(max: 99)]
     private ?int $guanGaiCiShu = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\Range(max: 9999)]
     private ?int $zongGuanShuiLiang = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -342,9 +344,11 @@ class Pattern
     private ?float $paiShuiMaiShen = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\Range(max: 999)]
     private ?int $paiShuiJianJu = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\Range(max: 9999)]
     private ?int $huiYongNengLi = null;
 
     #[ORM\Column(nullable: true)]

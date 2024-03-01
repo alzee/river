@@ -296,7 +296,7 @@ class Pattern
 
     #[ORM\Column]
     #[Groups(['read', 'write'])]
-    #[Assert\Length(exactly: 4, exactMessage: '请输入4位数字')]
+    #[Assert\Range(min: 1000, max: 9999, notInRangeMessage: '请输入4位数字')]
     private ?int $SN = null;
 
     #[ORM\Column(type: Types::SMALLINT, nullable: true)]

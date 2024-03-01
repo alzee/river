@@ -151,8 +151,6 @@ class PatternCrudController extends AbstractCrudController
         yield TextareaField::new('zuZhiShiShiXieTong')->setColumns(6);
         
         yield FormField::addFieldset('其它');
-        yield TextField::new('zhongZiPinZhong')->setColumns(6);
-        
         yield NumberField::new('zhongShiDanChan')->setColumns(6);
         yield TextField::new('feiLiaoShiYong')->setColumns(6);
         yield TextField::new('chanNengTiSheng')->setColumns(6);

@@ -109,6 +109,7 @@ class Pattern
 
     #[ORM\Column(nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Range(max: 9999)]
     private ?float $moShiZongJia = null;
 
     #[ORM\Column(nullable: true)]
@@ -129,7 +130,7 @@ class Pattern
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['read', 'write'])]
-    private ?string $danChanTiSheng = null;
+    private ?float $danChanTiSheng = null;
 
     #[ORM\Column(nullable: true)]
     #[Groups(['read', 'write'])]
@@ -217,6 +218,7 @@ class Pattern
 
     #[ORM\Column(nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Range(max: 9999)]
     private ?int $yuQiDanChan = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -362,6 +364,7 @@ class Pattern
     private ?string $nongYiZhiBao = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\Range(max: 9999)]
     private ?int $yuQiZongChan = null;
     
     public function getSoil0()
@@ -667,12 +670,12 @@ class Pattern
         return $this;
     }
 
-    public function getDanChanTiSheng(): ?string
+    public function getDanChanTiSheng(): ?float
     {
         return $this->danChanTiSheng;
     }
 
-    public function setDanChanTiSheng(?string $danChanTiSheng): static
+    public function setDanChanTiSheng(?float $danChanTiSheng): static
     {
         $this->danChanTiSheng = $danChanTiSheng;
 

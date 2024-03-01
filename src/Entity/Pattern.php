@@ -301,6 +301,11 @@ class Pattern
     #[ORM\OneToMany(targetEntity: Irrigation::class, mappedBy: 'pattern', cascade: ["remove"], orphanRemoval: true)]
     #[ORM\OrderBy(["id" => "ASC"])]
     #[Groups(['read', 'write'])]
+    #[Assert\Collection(
+        fields: ['guanShuiLiang' => new Assert\Range(max: 9999)],
+        allowExtraFields: true,
+        allowMissingFields: true
+    )]
     private Collection $irrigations;
 
     #[ORM\OneToMany(targetEntity: Fertilizer::class, mappedBy: 'pattern', cascade: ["remove"], orphanRemoval: true)]

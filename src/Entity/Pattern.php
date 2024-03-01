@@ -70,7 +70,7 @@ class Pattern
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['read', 'write'])]
-    private ?string $diLiDengJi = null;
+    private ?float $diLiDengJi = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['read', 'write'])]
@@ -342,6 +342,18 @@ class Pattern
 
     #[ORM\Column(nullable: true)]
     private ?float $chanTouBi = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $xiaoZhangCuoShi = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $zengTanPeiFei = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $nongYiZhiBao = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $yuQiZongChan = null;
     
     public function getSoil0()
     {
@@ -478,12 +490,12 @@ class Pattern
         return $this;
     }
 
-    public function getDiLiDengJi(): ?string
+    public function getDiLiDengJi(): ?float
     {
         return $this->diLiDengJi;
     }
 
-    public function setDiLiDengJi(?string $diLiDengJi): static
+    public function setDiLiDengJi(?float $diLiDengJi): static
     {
         $this->diLiDengJi = $diLiDengJi;
 
@@ -1426,6 +1438,54 @@ class Pattern
     public function setChanTouBi(?float $chanTouBi): static
     {
         $this->chanTouBi = $chanTouBi;
+
+        return $this;
+    }
+
+    public function getXiaoZhangCuoShi(): ?string
+    {
+        return $this->xiaoZhangCuoShi;
+    }
+
+    public function setXiaoZhangCuoShi(?string $xiaoZhangCuoShi): static
+    {
+        $this->xiaoZhangCuoShi = $xiaoZhangCuoShi;
+
+        return $this;
+    }
+
+    public function getZengTanPeiFei(): ?string
+    {
+        return $this->zengTanPeiFei;
+    }
+
+    public function setZengTanPeiFei(?string $zengTanPeiFei): static
+    {
+        $this->zengTanPeiFei = $zengTanPeiFei;
+
+        return $this;
+    }
+
+    public function getNongYiZhiBao(): ?string
+    {
+        return $this->nongYiZhiBao;
+    }
+
+    public function setNongYiZhiBao(?string $nongYiZhiBao): static
+    {
+        $this->nongYiZhiBao = $nongYiZhiBao;
+
+        return $this;
+    }
+
+    public function getYuQiZongChan(): ?int
+    {
+        return $this->yuQiZongChan;
+    }
+
+    public function setYuQiZongChan(?int $yuQiZongChan): static
+    {
+        $this->yuQiZongChan = $yuQiZongChan;
 
         return $this;
     }

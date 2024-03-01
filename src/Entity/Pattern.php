@@ -312,6 +312,7 @@ class Pattern
     private ?int $zongGuanShuiLiang = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Length(max: 4)]
     private ?string $paiShuiFangShi = null;
 
     #[ORM\Column(nullable: true)]
@@ -348,12 +349,15 @@ class Pattern
     private ?float $chanTouBi = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Length(max: 12)]
     private ?string $xiaoZhangCuoShi = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Length(max: 12)]
     private ?string $zengTanPeiFei = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Length(max: 12)]
     private ?string $nongYiZhiBao = null;
 
     #[ORM\Column(nullable: true)]

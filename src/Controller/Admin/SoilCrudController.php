@@ -29,52 +29,52 @@ class SoilCrudController extends AbstractCrudController
         yield NumberField::new('ganRongLiang')
             ->setColumns(3)
             ;
-        yield TextField::new('kongXiDu')
+        yield NumberField::new('kongXiDu')
             ->setColumns(3)
             ;
-        yield TextField::new('quanDan')
+        yield NumberField::new('quanDan')
             ->setColumns(3)
             ;
-        yield TextField::new('quanLin')
+        yield NumberField::new('quanLin')
             ->setColumns(3)
             ;
-        yield TextField::new('quanJia')
+        yield NumberField::new('quanJia')
             ->setColumns(3)
             ;
-        yield TextField::new('youJiZhi')
+        yield NumberField::new('youJiZhi')
             ->setColumns(3)
             ;
-        yield TextField::new('xiaoTaiDan')
+        yield NumberField::new('xiaoTaiDan')
             ->setColumns(3)
             ;
-        yield TextField::new('anTaiDan')
+        yield NumberField::new('anTaiDan')
             ->setColumns(3)
             ;
-        yield TextField::new('youXiaoLin')
+        yield NumberField::new('youXiaoLin')
             ->setColumns(3)
             ;
-        yield TextField::new('youXiaoJia')
+        yield NumberField::new('youXiaoJia')
             ->setColumns(3)
             ;
-        yield TextField::new('jianJieDan')
+        yield NumberField::new('jianJieDan')
             ->setColumns(3)
             ;
-        yield TextField::new('quanYanLiang')
+        yield NumberField::new('quanYanLiang')
             ->setColumns(3)
             ;
-        yield TextField::new('EC')
+        yield NumberField::new('EC')
             ->setColumns(3)
             ;
-        yield TextField::new('PH')
+        yield NumberField::new('PH')
             ->setColumns(3)
             ;
-        yield TextField::new('baoHeHanShuiLv')
+        yield NumberField::new('baoHeHanShuiLv')
             ->setColumns(3)
             ;
-        yield TextField::new('baoHeDaoShuiLv')
+        yield NumberField::new('baoHeDaoShuiLv')
             ->setColumns(3)
             ;
-        yield TextField::new('tianJianChiShuiLiang')
+        yield NumberField::new('tianJianChiShuiLiang')
             ->setColumns(3)
             ;
     }

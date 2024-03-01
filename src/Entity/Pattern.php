@@ -104,7 +104,8 @@ class Pattern
 
     #[ORM\Column(nullable: true)]
     #[Groups(['read', 'write'])]
-    private ?float $moShiDanJia = null;
+    #[Assert\Range(max: 99999)]
+    private ?int $moShiDanJia = null;
 
     #[ORM\Column(nullable: true)]
     #[Groups(['read', 'write'])]
@@ -594,12 +595,12 @@ class Pattern
         return $this;
     }
 
-    public function getMoShiDanJia(): ?float
+    public function getMoShiDanJia(): ?int
     {
         return $this->moShiDanJia;
     }
 
-    public function setMoShiDanJia(?float $moShiDanJia): static
+    public function setMoShiDanJia(?int $moShiDanJia): static
     {
         $this->moShiDanJia = $moShiDanJia;
 

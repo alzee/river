@@ -41,7 +41,7 @@ class PatternIrrigationCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        yield TextField::new('SN')
+        yield IntegerField::new('SN')
             ->setDisabled()
             ->setColumns(4)
         ;

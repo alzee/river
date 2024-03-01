@@ -7,6 +7,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
@@ -34,7 +35,7 @@ class PatternCrudController extends AbstractCrudController
         // yield FormField::addRow();
         if ($pageName === 'index') {
             yield IdField::new('id');
-            yield TextField::new('SN');
+            yield IntegerField::new('SN');
             yield TextField::new('name', 'Pattern Name');
             yield TextField::new('shiShiFuZeRen');
             yield TextField::new('zhuanTiFuZeRen');
@@ -50,7 +51,7 @@ class PatternCrudController extends AbstractCrudController
         
         yield FormField::addColumn(12);
         yield FormField::addFieldset('基本信息');
-        yield TextField::new('SN')
+        yield IntegerField::new('SN')
             ->setHelp('4位数字，如 5101')
             ->setHelp($help)
             ->setDisabled($disabled)

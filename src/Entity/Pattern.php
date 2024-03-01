@@ -294,9 +294,10 @@ class Pattern
     #[Groups(['read', 'write'])]
     private Collection $costs;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column]
     #[Groups(['read', 'write'])]
-    private ?string $SN = null;
+    #[Assert\Length(exactly: 4, exactMessage: '请输入4位数字')]
+    private ?int $SN = null;
 
     #[ORM\Column(type: Types::SMALLINT, nullable: true)]
     private ?int $guanGaiCiShu = null;
@@ -1247,12 +1248,12 @@ class Pattern
         return $this;
     }
 
-    public function getSN(): ?string
+    public function getSN(): ?int
     {
         return $this->SN;
     }
 
-    public function setSN(string $SN): static
+    public function setSN(int $SN): static
     {
         $this->SN = $SN;
 

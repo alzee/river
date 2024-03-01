@@ -62,10 +62,10 @@ Costs: 成本效益
 Location: 验证地点
 Latitude: 中心点北纬
 Longitude: 中心点东经
-Area: 面积
+Area: 面积(亩)
 Tu Rang Zhi Di: 土壤质地
 Yan Jian Cheng Du: 盐碱程度
-Di Li Deng Ji: 地力等级
+Di Li Deng Ji: 地力等级(级)
 Yan Jian Cheng Yin: 盐碱成因
 Zhu Yao Zhang Ai: 主要障碍
 Zhong Zhi Zuo Wu: 种植作物
@@ -73,12 +73,12 @@ Guan Gai Xie Tong: 灌溉协同
 Xiao Zhang Pei Fei: 消障培肥
 Zhong Zi Nong Yi: 种子农艺
 Gen Zong Jian Ce: 跟踪监测
-Mo Shi Dan Jia: 模式单价
-Mo Shi Zong Jia: 模式总价
+Mo Shi Dan Jia: 模式单价(元/亩)
+Mo Shi Zong Jia: 模式总价(万元)
 Zhong Shi Dan Chan: 中试单产
 Guan Gai Ding E: 灌溉定额
 Yan Jian Xia Jiang: 盐碱下降
-Di Li Ti Sheng: 地力提升
+Di Li Ti Sheng: 地力提升(级)
 Dan Chan Ti Sheng: 单产提升
 Shui Xiao Ti Sheng: 水效提升
 Yan Zheng Zhuan Ti: 验证专题
@@ -92,7 +92,7 @@ Jian Ce Shen He: 监测审核
 Mo Shi Shen He: 模式审核
 Ke Ti Shen Pi: 课题审批
 Xiang Mu Pi Zhun: 项目批准
-Gao Cheng: 高程
+Gao Cheng: 高程(m)
 Yan Hua Jian Hua: 盐化碱化
 Quan Yan Liang: 全盐量(g/kg)
 You Ji Zhi Han Liang: 有机质含量 
@@ -100,7 +100,7 @@ EC: EC(ds/m)
 PH: pH值
 Guan Gai Fang Shi: 灌溉方式
 Fei Liao Shi Yong: 肥料施用
-Yu Qi Dan Chan: 预期单产
+Yu Qi Dan Chan: 预期单产(kg/亩)
 Chan Neng Ti Sheng: 产能提升
 Tou Ru: 投入
 Chan Chu: 产出
@@ -110,6 +110,16 @@ Nong Yi Zai Pei Te Dian: 农艺栽培特点
 Gen Zong Jian Ce Fang An: 跟踪监测方案
 Zu Zhi Shi Shi Xie Tong: 组织实施协同
 Zhong Zi Pin Zhong: 种子品种
+Xiao Zhang Cuo Shi: 消障措施
+Zeng Tan Pei Fei: 增碳培肥
+Nong Yi Zhi Bao: 农艺植保
+Guan Pai Xie Tong Shen He: 灌排协同审核
+Xiao Zhang Pei Fei Shen He: 消障培肥审核
+Zhong Zi Nong Yi Shen He: 种子农艺审核
+Gen Zong Jian Ce Shen He: 跟踪监测审核
+Ji Shu Mo Shi Shen He: 技术模式审核
+Cai Wu Yu Suan Shen He: 财务预算审核
+Yu Qi Zong Chan: 预期总产(万元)
 
 # Cost: 
 Nei Rong: 内容

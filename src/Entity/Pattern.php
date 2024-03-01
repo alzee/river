@@ -74,6 +74,7 @@ class Pattern
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Length(max: 4)]
     private ?string $yanJianChengYin = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -82,6 +83,7 @@ class Pattern
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Length(max: 4)]
     private ?string $zhongZhiZuoWu = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -196,6 +198,7 @@ class Pattern
 
     #[ORM\Column(nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Range(max: 9999)]
     private ?float $EC = null;
 
     #[ORM\Column(nullable: true)]
@@ -204,6 +207,7 @@ class Pattern
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Length(max: 5)]
     private ?string $guanGaiFangShi = null;
 
     #[ORM\Column(length: 255, nullable: true)]

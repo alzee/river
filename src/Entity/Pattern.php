@@ -88,18 +88,22 @@ class Pattern
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['read', 'write'])]
-    private ?string $guanGaiXieTong = null;
+    #[Assert\Length(max: 100)]
+    private ?string $guanPaiXieTong = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Length(max: 100)]
     private ?string $xiaoZhangPeiFei = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Length(max: 100)]
     private ?string $zhongZiNongYi = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Length(max: 100)]
     private ?string $genZongJianCe = null;
 
     #[ORM\Column(nullable: true)]
@@ -118,6 +122,7 @@ class Pattern
 
     #[ORM\Column(nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Range(max: 9999)]
     private ?int $guanGaiDingE = null;
 
     #[ORM\Column(nullable: true)]
@@ -152,26 +157,32 @@ class Pattern
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Length(max: 3)]
     private ?string $guanPaiSheJi = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Length(max: 3)]
     private ?string $peiFeiSheJi = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Length(max: 3)]
     private ?string $zhongZiQueRen = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Length(max: 3)]
     private ?string $nongYiSheJi = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Length(max: 3)]
     private ?string $jianCeShenHe = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Length(max: 3)]
     private ?string $moShiShenHe = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -239,22 +250,27 @@ class Pattern
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Length(max: 50)]
     private ?string $guanPaiXieTongCuoShi = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Length(max: 50)]
     private ?string $xiaoZhangPeiFeiYaoDian = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Length(max: 50)]
     private ?string $nongYiZaiPeiTeDian = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Length(max: 50)]
     private ?string $genZongJianCeFangAn = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     #[Groups(['read', 'write'])]
+    #[Assert\Length(max: 50)]
     private ?string $zuZhiShiShiXieTong = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -578,14 +594,14 @@ class Pattern
         return $this;
     }
 
-    public function getGuanGaiXieTong(): ?string
+    public function getGuanPaiXieTong(): ?string
     {
-        return $this->guanGaiXieTong;
+        return $this->guanPaiXieTong;
     }
 
-    public function setGuanGaiXieTong(?string $guanGaiXieTong): static
+    public function setGuanPaiXieTong(?string $guanPaiXieTong): static
     {
-        $this->guanGaiXieTong = $guanGaiXieTong;
+        $this->guanPaiXieTong = $guanPaiXieTong;
 
         return $this;
     }

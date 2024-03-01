@@ -14,6 +14,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\PercentField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use App\Admin\Field\VichImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 
@@ -139,21 +140,24 @@ class PatternCrudController extends AbstractCrudController
         
         yield FormField::addColumn(12);
         yield FormField::addFieldset('技术模式简述（每项不超过100字）');
-        yield TextField::new('guanGaiXieTong')->setColumns(6);
-        yield TextField::new('xiaoZhangPeiFei')->setColumns(6);
-        yield TextField::new('zhongZiNongYi')->setColumns(6);
-        yield TextField::new('genZongJianCe')->setColumns(6);
+        yield TextareaField::new('guanPaiXieTong')->setColumns(6);
+        yield TextareaField::new('xiaoZhangPeiFei')->setColumns(6);
+        yield TextareaField::new('zhongZiNongYi')->setColumns(6);
+        yield TextareaField::new('genZongJianCe')->setColumns(6);
+        yield TextareaField::new('guanPaiXieTongCuoShi')->setColumns(6);
+        yield TextareaField::new('xiaoZhangPeiFeiYaoDian')->setColumns(6);
+        yield TextareaField::new('nongYiZaiPeiTeDian')->setColumns(6);
+        yield TextareaField::new('genZongJianCeFangAn')->setColumns(6);
+        yield TextareaField::new('zuZhiShiShiXieTong')->setColumns(6);
+        
+        yield FormField::addFieldset('其它');
+        yield TextField::new('zhongZiPinZhong')->setColumns(6);
+        
         yield NumberField::new('zhongShiDanChan')->setColumns(6);
         yield TextField::new('feiLiaoShiYong')->setColumns(6);
         yield TextField::new('chanNengTiSheng')->setColumns(6);
         yield NumberField::new('touRu')->setColumns(6);
         yield NumberField::new('chanChu')->setColumns(6);
-        yield TextField::new('guanPaiXieTongCuoShi')->setColumns(6);
-        yield TextField::new('xiaoZhangPeiFeiYaoDian')->setColumns(6);
-        yield TextField::new('nongYiZaiPeiTeDian')->setColumns(6);
-        yield TextField::new('genZongJianCeFangAn')->setColumns(6);
-        yield TextField::new('zuZhiShiShiXieTong')->setColumns(6);
-        yield TextField::new('zhongZiPinZhong')->setColumns(6);
         
     }
 }

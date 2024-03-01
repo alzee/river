@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\IrrigationRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
 use Symfony\Component\Serializer\Annotation\Groups;
@@ -26,10 +27,6 @@ class Irrigation
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['other_read', 'read', 'other_write'])]
-    private ?string $date = null;
-
-    #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $guanShuiLiang = null;
 
     #[ORM\ManyToOne(inversedBy: 'irrigations')]
@@ -40,6 +37,9 @@ class Irrigation
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['other_read', 'read', 'other_write'])]
     private ?string $type = null;
+
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $date = null;
     
     public function __toString()
     {
@@ -49,18 +49,6 @@ class Irrigation
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getDate(): ?string
-    {
-        return $this->date;
-    }
-
-    public function setDate(string $date): static
-    {
-        $this->date = $date;
-
-        return $this;
     }
 
     public function getGuanShuiLiang(): ?string
@@ -95,6 +83,18 @@ class Irrigation
     public function setType(?string $type): static
     {
         $this->type = $type;
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(?\DateTimeInterface $date): static
+    {
+        $this->date = $date;
 
         return $this;
     }

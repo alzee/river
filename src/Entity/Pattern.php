@@ -25,13 +25,8 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 )]
 #[ApiFilter(SearchFilter::class, properties: ['id' => 'exact'])]
 #[ApiFilter(OrderFilter::class, properties: ['id'])]
-#[UniqueEntity('name',
-    message: 'This name is already in use',
-)]
-#[UniqueEntity(
-    fields: 'SN',
-    message: 'SN is already in use',
-)]
+#[UniqueEntity('name')]
+#[UniqueEntity('SN')]
 class Pattern
 {
     #[ORM\Id]
@@ -42,6 +37,7 @@ class Pattern
 
     #[ORM\Column(length: 255)]
     #[Groups(['read', 'write'])]
+    #[Assert\Length(max: 36)]
     private ?string $name = null;
 
     #[ORM\Column(length: 255, nullable: true)]

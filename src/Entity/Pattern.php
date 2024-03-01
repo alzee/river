@@ -55,7 +55,7 @@ class Pattern
 
     #[ORM\Column(nullable: true)]
     #[Groups(['read', 'write'])]
-    #[Assert\Range(min: 1000, max: 9999)]
+    #[Assert\Range(max: 99999)]
     private ?int $area = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -174,9 +174,10 @@ class Pattern
     #[Groups(['read', 'write'])]
     private ?string $xiangMuPiZhun = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(nullable: true)]
     #[Groups(['read', 'write'])]
-    private ?string $gaoCheng = null;
+    #[Assert\Range(max: 9999)]
+    private ?int $gaoCheng = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['read', 'write'])]
@@ -798,12 +799,12 @@ class Pattern
         return $this;
     }
 
-    public function getGaoCheng(): ?string
+    public function getGaoCheng(): ?int
     {
         return $this->gaoCheng;
     }
 
-    public function setGaoCheng(?string $gaoCheng): static
+    public function setGaoCheng(?int $gaoCheng): static
     {
         $this->gaoCheng = $gaoCheng;
 

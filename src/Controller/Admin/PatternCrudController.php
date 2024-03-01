@@ -101,7 +101,7 @@ class PatternCrudController extends AbstractCrudController
         yield NumberField::new('diLiTiSheng')->setColumns(6);
         yield TextField::new('danChanTiSheng')->setColumns(6);
         yield NumberField::new('shuiXiaoTiSheng')->setColumns(6);
-        yield TextField::new('gaoCheng')->setColumns(6);
+        yield IntegerField::new('gaoCheng')->setColumns(6);
         yield TextField::new('yanHuaJianHua')->setColumns(6);
         yield NumberField::new('quanYanLiang')->setColumns(6);
         yield NumberField::new('youJiZhiHanLiang')->setColumns(6);
